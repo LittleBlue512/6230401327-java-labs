@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Athlete",
+            "request": "launch",
+            "mainClass": "sirimul.chattipoom.lab2.Athlete"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Calculator",
+            "request": "launch",
+            "mainClass": "sirimul.chattipoom.lab2.Calculator"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - VowelsCounter",
+            "request": "launch",
+            "mainClass": "sirimul.chattipoom.lab2.VowelsCounter"
+        }
+    ]
+}
