@@ -14,7 +14,9 @@ package sirimul.chattipoom.lab2;
 
 public class Calculator {
     public static void main(String[] args) {
+        long beginTime = System.currentTimeMillis();
         if (args.length != 0 && (args[0].equals("Q") || args[0].equals("q"))) {
+            System.out.println("Execution Time: " + (System.currentTimeMillis() - beginTime) + " ms");
             System.out.println("Quitting the program...");
             return;
         } else if (args.length != 3) {
