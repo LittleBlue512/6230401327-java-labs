@@ -1,5 +1,5 @@
 /**
- * This VowelsCounter program accepts string and returns how many vowels are in that string as an integer.
+ * This VowelsCounter program accepts string and returns how many vowels are in that string, as an integer.
  *
  * Author: Chattipoom Sirimul
  * ID: 623040132-7
