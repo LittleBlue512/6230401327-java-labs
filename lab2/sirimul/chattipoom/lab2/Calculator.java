@@ -20,7 +20,7 @@ public class Calculator {
         } else if (args.length != 3) {
             System.out.printf("Calculator <operator> <operand1> <operand2>");
         } else {
-            String operator = args[0], output = "";
+            String operator = args[0], output;
             double operand1 = Double.parseDouble(args[1]), operand2 = Double.parseDouble(args[2]);
             output = String.format("%.2f %s %.2f = ", operand1, operator, operand2);
             switch (operator) {
