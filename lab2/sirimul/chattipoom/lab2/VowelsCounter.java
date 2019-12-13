@@ -10,9 +10,6 @@
 
 package sirimul.chattipoom.lab2;
 
-import java.awt.List;
-import java.util.Arrays;
-
 public class VowelsCounter {
     public static void main(String[] args) {
         if (args.length != 1) {
