@@ -2,9 +2,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - Athlete",
+            "name": "CodeLens (Launch) - VowelsCounter",
             "request": "launch",
-            "mainClass": "sirimul.chattipoom.lab2.Athlete"
+            "mainClass": "sirimul.chattipoom.lab2.VowelsCounter"
         },
         {
             "type": "java",
@@ -14,9 +14,9 @@
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - VowelsCounter",
+            "name": "CodeLens (Launch) - Athlete",
             "request": "launch",
-            "mainClass": "sirimul.chattipoom.lab2.VowelsCounter"
+            "mainClass": "sirimul.chattipoom.lab2.Athlete"
         }
     ]
 }
