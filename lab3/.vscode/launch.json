@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NumberGuessingConfigurableGame",
+            "request": "launch",
+            "mainClass": "sirimul.chattipoom.lab3.NumberGuessingConfigurableGame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NumberGuessingMethodGame",
+            "request": "launch",
+            "mainClass": "sirimul.chattipoom.lab3.NumberGuessingMethodGame"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NumberGuessingGame",
+            "request": "launch",
+            "mainClass": "sirimul.chattipoom.lab3.NumberGuessingGame"
+        }
+    ]
+}
