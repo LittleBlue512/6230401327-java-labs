@@ -21,13 +21,12 @@ public class NumberGuessingMethodGame {
     static int maxNum = 10;
 
     public static void main(String[] args) {
-        answer = genAnswer();
+        genAnswer();
         playGame();
     }
 
-    private static int genAnswer() {
-        final int randNum = (int) (Math.random() * ((maxNum - minNum) + 1)) + minNum;
-        return randNum;
+    private static void genAnswer() {
+        answer = (int) (Math.random() * ((maxNum - minNum) + 1)) + minNum;
     }
 
     private static void playGame() {

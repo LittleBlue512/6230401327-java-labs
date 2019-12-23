@@ -35,7 +35,7 @@ public class NumberGuessingConfigurableGame {
 
         // "Gaming all day"
         while (true) {
-            answer = genAnswer();
+            genAnswer();
             playGame();
 
             // Check if user want to play again
@@ -86,9 +86,8 @@ public class NumberGuessingConfigurableGame {
     }
 
     // Get answer
-    private static int genAnswer() {
-        final int randNum = (int) (Math.random() * ((maxNum - minNum) + 1)) + minNum;
-        return randNum;
+    private static void genAnswer() {
+        answer = (int) (Math.random() * ((maxNum - minNum) + 1)) + minNum;
     }
 
     // Start game
