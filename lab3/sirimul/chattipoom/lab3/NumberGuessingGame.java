@@ -66,5 +66,6 @@ class NumberGuessingGame {
                 System.out.println("Try a lower number!");
             }
         }
+        userScanner.close();
     }
 }

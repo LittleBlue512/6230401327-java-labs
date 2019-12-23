@@ -79,5 +79,6 @@ public class NumberGuessingMethodGame {
                 System.out.println("Try a lower number!");
             }
         }
+        userScanner.close();
     }
 }
