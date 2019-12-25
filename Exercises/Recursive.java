@@ -45,8 +45,11 @@ public class Recursive {
         userScanner.close();
     }
 
-    // Get a(n)
+    // Get a(n) -- Simplified version
     private static int rec(int n) {
-        return n <= 1 ? 3 : rec(n - 1) + 2;
+        if (n <= 1)
+            return 3;
+        else
+            return rec(n - 1) + 2;
     }
 }

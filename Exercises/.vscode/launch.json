@@ -5,6 +5,13 @@
             "name": "CodeLens (Launch) - Recursive",
             "request": "launch",
             "mainClass": "Recursive",
+            "projectName": "Exercises_fce7f699"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Recursive",
+            "request": "launch",
+            "mainClass": "Recursive",
             "projectName": "Exercises_2169f0f7"
         },
         {
