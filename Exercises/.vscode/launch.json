@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Recursive",
+            "request": "launch",
+            "mainClass": "Recursive",
+            "projectName": "Exercises_2169f0f7"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Overloading",
+            "request": "launch",
+            "mainClass": "Overloading",
+            "projectName": "Exercises_2169f0f7"
+        }
+    ]
+}
