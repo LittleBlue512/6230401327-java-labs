@@ -3,6 +3,8 @@
  * This program is to use overloading methods to handle multiple cases of input.
  * 
  * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Sec: 1
  * Date: December 25, 2019
  */
 
