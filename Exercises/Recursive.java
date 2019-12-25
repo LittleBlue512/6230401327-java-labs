@@ -45,7 +45,7 @@ public class Recursive {
         userScanner.close();
     }
 
-    // Get a(n) -- Simplified version
+    // Get a(n) // Easy-to-understand version
     private static int rec(int n) {
         if (n <= 1)
             return 3;
