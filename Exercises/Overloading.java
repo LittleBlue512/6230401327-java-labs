@@ -22,13 +22,14 @@ public class Overloading {
         System.out.println(str);
     }
 
-    // handle multiple string arguments
+    // Handle multiple string arguments
     private static void display(String... strs) {
         String output = "";
 
         // Format the output
         output = String.join(" and ", strs);
 
+        // Print the result
         System.out.println(output);
     }
 
@@ -49,7 +50,7 @@ public class Overloading {
         // Format the output
         output = String.join(" + ", numsChars) + String.format(" = %d", sum);
 
-        // Print
+        // Print the result
         System.out.println(output);
     }
 }
