@@ -1,7 +1,9 @@
 
 /**
  * This program is to find a(n) which a(n) = a(n-1) + 2 and a(1) = 3.
- * User enters value of n and programs will show the result of a(n).
+ * The value of n must be greater or equal to 1.
+ * Input: The value of n.
+ * Output: The value of a(n).
  * 
  * Author: Chattipoom Sirimul
  * Date: December 25, 2019
