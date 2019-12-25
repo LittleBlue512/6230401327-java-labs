@@ -33,7 +33,7 @@ public class Recursive {
                 continue;
             }
 
-            // Check if input is greater than 1
+            // Make sure that input is greater or equal to 1.
             if (n < 1) {
                 System.out.println("Invalid Input: Value of n must be greater or equal 1.");
                 continue;
