@@ -6,6 +6,8 @@
  * Output: The value of a(n).
  * 
  * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Sec: 1
  * Date: December 25, 2019
  */
 
