@@ -15,10 +15,10 @@ import java.util.Scanner;
 
 class NumberGuessingGame {
     public static void main(String[] args) {
-        final int minNum = 1;
-        final int maxNum = 10;
-        final int maxTries = 5;
-        final int randNum = (int) (Math.random() * ((maxNum - minNum) + 1)) + minNum;
+        int minNum = 1;
+        int maxNum = 10;
+        int maxTries = 5;
+        int randNum = (int) (Math.random() * ((maxNum - minNum) + 1)) + minNum;
         Scanner userScanner = new Scanner(System.in);
         int userInput = 0;
         int numTries = 0;
@@ -66,5 +66,6 @@ class NumberGuessingGame {
                 System.out.println("Try a lower number!");
             }
         }
+        userScanner.close();
     }
 }

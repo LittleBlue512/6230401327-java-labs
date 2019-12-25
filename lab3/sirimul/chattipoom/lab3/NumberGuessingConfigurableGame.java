@@ -17,6 +17,7 @@ package sirimul.chattipoom.lab3;
 import java.util.Scanner;
 
 public class NumberGuessingConfigurableGame {
+    static Scanner userScanner = new Scanner(System.in);
     static int answer;
     static int numTries;
     static int maxTries = 5;
@@ -24,7 +25,6 @@ public class NumberGuessingConfigurableGame {
     static int maxNum = 10;
 
     public static void main(String[] args) {
-        Scanner userScanner = new Scanner(System.in);
         String userInput = "";
 
         // Get valid configurations
@@ -35,7 +35,7 @@ public class NumberGuessingConfigurableGame {
 
         // "Gaming all day"
         while (true) {
-            answer = genAnswer();
+            genAnswer();
             playGame();
 
             // Check if user want to play again
@@ -46,13 +46,13 @@ public class NumberGuessingConfigurableGame {
                 break;
             }
         }
+        userScanner.close();
     }
 
     // Get configurations
     private static boolean getConfigs() {
-        Scanner userScanner = new Scanner(System.in);
         String input1, input2, input3;
-        int temp1, temp2, temp3;
+        int minTemp, maxTemp, triesTemp;
 
         // Get inputs
         System.out.print("Enter the min value: ");
@@ -64,30 +64,34 @@ public class NumberGuessingConfigurableGame {
 
         // Check if all inputs are integer
         try {
-            temp1 = Integer.parseInt(input1);
-            temp2 = Integer.parseInt(input2);
-            temp3 = Integer.parseInt(input3);
+            minTemp = Integer.parseInt(input1);
+            maxTemp = Integer.parseInt(input2);
+            triesTemp = Integer.parseInt(input3);
         } catch (NumberFormatException ex) {
             System.out.println("Invalid input: Please enter integer only.");
             return false;
         }
 
+        // Make sure that max is greater than min
+        if (maxTemp < minTemp) {
+            System.out.println("Invalid input: Max value must be greater than min value.");
+            return false;
+        }
+
         // Set configurations
-        minNum = temp1;
-        maxNum = temp2;
-        maxTries = temp3;
+        minNum = minTemp;
+        maxNum = maxTemp;
+        maxTries = triesTemp;
         return true;
     }
 
     // Get answer
-    private static int genAnswer() {
-        final int randNum = (int) (Math.random() * ((maxNum - minNum) + 1)) + minNum;
-        return randNum;
+    private static void genAnswer() {
+        answer = (int) (Math.random() * ((maxNum - minNum) + 1)) + minNum;
     }
 
     // Start game
     private static void playGame() {
-        Scanner userScanner = new Scanner(System.in);
         String inputTemp = "";
         int userInput = 0;
 
