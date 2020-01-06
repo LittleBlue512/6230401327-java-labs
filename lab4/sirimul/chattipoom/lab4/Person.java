@@ -56,7 +56,7 @@ public class Person {
         String output = "";
         output += String.format("Name: %s\n", this.name);
         output += String.format("Name: %.2f\n", this.height);
-        output += String.format("Name: %.2f\n", this.weight);
+        output += String.format("Name: %.2f", this.weight);
         return output;
     }
 
