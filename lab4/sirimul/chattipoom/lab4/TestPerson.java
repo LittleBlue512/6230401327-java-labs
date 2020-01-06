@@ -1,5 +1,15 @@
+/**
+ * This program is to create objects from the class "Person" and test the code.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: January 6, 2020
+ */
+
 package sirimul.chattipoom.lab4;
 
+// Import class "Person".
 import sirimul.chattipoom.lab4.Person;
 
 public class TestPerson {
