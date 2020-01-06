@@ -53,10 +53,7 @@ public class Person {
 
     @Override
     public String toString() {
-        String output = "";
-        output += String.format("Name: %s\n", this.name);
-        output += String.format("Name: %.2f\n", this.height);
-        output += String.format("Name: %.2f", this.weight);
+        String output = String.format("name=%s, height=%.1f cm. weight=%.1f m.", this.name, this.height, this.weight);
         return output;
     }
 
