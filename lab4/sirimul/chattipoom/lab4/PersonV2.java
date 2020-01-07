@@ -40,13 +40,14 @@ public class PersonV2 extends Person {
         // Get the curretn date.
         LocalDate currentDate = LocalDate.now();
 
-        int birthDay = this.dob.getDay();
-        int birthMonth = this.dob.getMonth();
-        int currentDay = currentDate.getDay();
-        int currentMonth = currentDate.getMonth();
+        // Get days and months.
+        int birthDay = this.dob.getDayOfMonth();
+        int birthMonth = this.dob.getMonthValue();
+        int currentDay = currentDate.getDayOfMonth();
+        int currentMonth = currentDate.getMonthValue();
         
         // Check if today is "this"'s birthday.
-        if (birthDay == currentDay && birthMonth == curretnMonth) {
+        if (birthDay == currentDay && birthMonth == currentMonth) {
             System.out.printf("Today is %s's birthday.\n", this.getName());
         } else {
             System.out.printf("Today is NOT %s's birthday.\n", this.getName());
