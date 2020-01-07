@@ -19,8 +19,8 @@ public class TestPersonV2 {
         nobita.howOld();
         doraemon.compareAge(nobita);
         nobita.compareAge(doraemon);
-        doraemon.isBirthdat();
-        nobita.isBirthdat();
+        doraemon.isBirthday();
+        nobita.isBirthday();
         System.out.println(Person.getNumberOfPerson() + " persons have been created.");
     }
 }

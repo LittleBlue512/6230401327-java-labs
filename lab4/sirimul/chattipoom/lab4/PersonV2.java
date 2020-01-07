@@ -1,5 +1,5 @@
 /**
- * This program is to create a class named "PersonV2".
+ * This program is to create a class "PersonV2" which extends from class "Person".
  * 
  * Author: Chattipoom Sirimul
  * ID: 623040132-7
@@ -36,7 +36,7 @@ public class PersonV2 extends Person {
     }
 
     // Check if today is the birthday of this object.
-    public void isBirthdat() {
+    public void isBirthday() {
         // Get the curretn date.
         LocalDate currentDate = LocalDate.now();
 
@@ -116,7 +116,8 @@ public class PersonV2 extends Person {
             System.out.printf("%s is %d years %d months %d days older than %s.\n", otherName, diffYears, diffMonths, diffDays, thisName);
         }
     }
-
+    
+    @Override
     public String toString() {
         String output = "";
 
