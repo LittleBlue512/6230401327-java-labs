@@ -75,7 +75,7 @@ public class Person {
     // Show infomations of the object.
     @Override
     public String toString() {
-        String output = String.format("name=%s, height=%.1f cm. weight=%.1f m.", this.name, this.height, this.weight);
+        String output = String.format("name=%s, height=%.1f cm. weight=%.1f kg.", this.name, this.height, this.weight);
         return output;
     }
 
