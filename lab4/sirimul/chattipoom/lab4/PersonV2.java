@@ -54,7 +54,7 @@ public class PersonV2 extends Person {
         }
     }
 
-    // Calcuate the age of this object (Ex:years months days old)
+    // Calculate the age of this object (Ex:years months days old)
     public void howOld() {
         // Get this object's name.
         String name = this.getName();
