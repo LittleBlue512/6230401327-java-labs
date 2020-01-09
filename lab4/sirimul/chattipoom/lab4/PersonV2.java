@@ -15,7 +15,8 @@ import java.time.Period;
 public class PersonV2 extends Person {
     private LocalDate dob;
 
-    // Constructor with 4 parameters: name, height, weight, date of birth (Ex:2020-01-25)
+    // Constructor with 4 parameters: name, height, weight, date of birth
+    // (Ex:2020-01-25)
     public PersonV2(String _name, double _height, double _weight, String str_dob) {
         // Initialize the first three variables (Person's variables).
         super(_name, _height, _weight);
@@ -45,7 +46,7 @@ public class PersonV2 extends Person {
         int birthMonth = this.dob.getMonthValue();
         int currentDay = currentDate.getDayOfMonth();
         int currentMonth = currentDate.getMonthValue();
-        
+
         // Check if today is "this"'s birthday.
         if (birthDay == currentDay && birthMonth == currentMonth) {
             System.out.printf("Today is %s's birthday.\n", this.getName());
@@ -64,7 +65,7 @@ public class PersonV2 extends Person {
         LocalDate currentDate = LocalDate.now();
 
         // Get the difference from birthOfDate to currentDate.
-        Period intervalPeriod = Period.between(birthOfDate, currentDate.minusDays(1));
+        Period intervalPeriod = Period.between(birthOfDate, currentDate);
 
         // Get the amount of years, months and days.
         int diffYears = intervalPeriod.getYears();
@@ -84,7 +85,8 @@ public class PersonV2 extends Person {
         LocalDate thisDateOfBirth = this.dob;
         LocalDate otherDateOfBirth = other.getDOB();
 
-        // Compare both birthday. The "compareTo" method returns 0 if both LocalDate are equal.
+        // Compare both birthday. The "compareTo" method returns 0 if both LocalDate are
+        // equal.
         int compareRes = thisDateOfBirth.compareTo(otherDateOfBirth);
 
         // Check compareRes
@@ -101,7 +103,8 @@ public class PersonV2 extends Person {
             int diffDays = intervalPeriod.getDays();
 
             // Print the result.
-            System.out.printf("%s is %d years %d months %d days older than %s.\n", thisName, diffYears, diffMonths, diffDays, otherName);
+            System.out.printf("%s is %d years %d months %d days older than %s.\n", thisName, diffYears, diffMonths,
+                    diffDays, otherName);
         } else {
             // "other" is older than "this".
             // Get the difference from thisDateOfBirth to otherDateOfBirth.
@@ -113,10 +116,11 @@ public class PersonV2 extends Person {
             int diffDays = intervalPeriod.getDays();
 
             // Print the result.
-            System.out.printf("%s is %d years %d months %d days older than %s.\n", otherName, diffYears, diffMonths, diffDays, thisName);
+            System.out.printf("%s is %d years %d months %d days older than %s.\n", otherName, diffYears, diffMonths,
+                    diffDays, thisName);
         }
     }
-    
+
     @Override
     public String toString() {
         String output = "";
