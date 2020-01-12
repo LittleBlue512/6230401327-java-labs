@@ -9,9 +9,9 @@ public class TestPersonV3 {
         onizuka.howOld();
         zuckerberg.howOld();
         System.out.println(Person.getNumberOfPerson() + " persons has been created.");
-        PersonV2 mickey = new PersonV2("mickey", 60, 25, "1982-01-01");
+        PersonV2 mickey = new PersonV2("Mickey Mouse", 60, 25, "1982-01-01");
         System.out.println(mickey);
-        mickey = new Student("mickey", 60, 25, "1982-01-01", "Animation", 3.00);
+        mickey = new Student("Mickey Mouse", 60, 25, "1982-01-01", "Animation", 3.00);
         System.out.println(mickey);
         System.out.println(Person.getNumberOfPerson() + " persons has been created.");
     }
