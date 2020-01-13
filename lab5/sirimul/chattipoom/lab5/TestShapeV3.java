@@ -1,3 +1,12 @@
+/**
+ * This program is to test the class "DrawableRectangle" and "DrawableCircle".
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: January 13, 2020
+ */
+
 package sirimul.chattipoom.lab5;
 
 public class TestShapeV3 {

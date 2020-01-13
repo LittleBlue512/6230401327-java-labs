@@ -1,3 +1,13 @@
+/**
+ * This program is to create a class "DrawableRectangle"
+ * which extends from class "Rectangle" and implements interfaces "Movable" and "Drawable"
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: January 13, 2020
+ */
+
 package sirimul.chattipoom.lab5;
 
 public class DrawableRectangle extends Rectangle implements Movable, Drawable {
@@ -42,6 +52,8 @@ public class DrawableRectangle extends Rectangle implements Movable, Drawable {
     public String toString() {
         return super.toString();
     }
+
+    // Implement interface
 
     @Override
     public void moveUp(int val) {
