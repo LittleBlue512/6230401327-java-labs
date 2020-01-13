@@ -23,7 +23,7 @@ public class Person {
         this.name = "unknown";
         this.weight = 0.0f;
         this.height = 0.0f;
-        Person.numberOfPerson++;
+        numberOfPerson++;
     }
 
     // Constructor with a parameter: name
@@ -31,7 +31,7 @@ public class Person {
         this.name = _name;
         this.weight = 0.0f;
         this.height = 0.0f;
-        Person.numberOfPerson++;
+        numberOfPerson++;
     }
 
     // Constructor with 3 parameters: name, height, weight
@@ -39,7 +39,7 @@ public class Person {
         this.name = _name;
         this.height = _height; // cm
         this.weight = _weight; // kg
-        Person.numberOfPerson++;
+        numberOfPerson++;
     }
 
     // Get the object's name.
@@ -75,7 +75,7 @@ public class Person {
     // Show infomations of the object.
     @Override
     public String toString() {
-        String output = String.format("name=%s, height=%.1f cm. weight=%.1f m.", this.name, this.height, this.weight);
+        String output = String.format("name=%s, height=%.1f cm. weight=%.1f kg.", this.name, this.height, this.weight);
         return output;
     }
 
@@ -88,6 +88,6 @@ public class Person {
 
     // Get number of Person's objects.
     public static int getNumberOfPerson() {
-        return Person.numberOfPerson;
+        return numberOfPerson;
     }
 }

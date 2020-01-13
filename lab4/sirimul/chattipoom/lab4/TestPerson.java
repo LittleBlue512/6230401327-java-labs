@@ -9,9 +9,6 @@
 
 package sirimul.chattipoom.lab4;
 
-// Import class "Person".
-import sirimul.chattipoom.lab4.Person;
-
 public class TestPerson {
     public static void main(String[] args) {
         Person unknown = new Person();
