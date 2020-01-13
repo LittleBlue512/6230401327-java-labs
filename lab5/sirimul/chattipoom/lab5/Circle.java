@@ -1,3 +1,12 @@
+/**
+ * This program is to create a class "Circle" which extends from class "Shape".
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: January 13, 2020
+ */
+
 package sirimul.chattipoom.lab5;
 
 import java.math.BigDecimal;

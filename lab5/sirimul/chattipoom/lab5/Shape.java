@@ -1,3 +1,15 @@
+/**
+ * This program is to create an abstract class "Shape".
+ * The class has 2 abstract methods.
+ *  - getArea: returns the area of the shape.
+ *  - getPerimeter: returns the perimeter of the shape.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: January 13, 2020
+ */
+
 package sirimul.chattipoom.lab5;
 
 public abstract class Shape {
