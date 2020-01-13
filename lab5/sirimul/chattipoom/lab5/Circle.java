@@ -23,10 +23,9 @@ public class Circle extends Shape {
         // Initialize 2 variables (Shape class's variables)
         super(_color, _filled);
 
-        // Initialize the radius variable (Circle class's varible)
+        // Initialize the radius variable (Circle class's variable)
         this.radius = _radius;
     }
-
 
     // Getter for radius.
     public double getRadius() {
@@ -47,7 +46,7 @@ public class Circle extends Shape {
         // Code from searching google ~
         BigDecimal bd = BigDecimal.valueOf(area);
         bd = bd.setScale(2, RoundingMode.HALF_UP);
-        return bd.doubleValue(); 
+        return bd.doubleValue();
     }
 
     // Get the perimeter of this circle.

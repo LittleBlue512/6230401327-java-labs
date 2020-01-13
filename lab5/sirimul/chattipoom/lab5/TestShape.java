@@ -20,6 +20,6 @@ public class TestShape {
         if (c3.isFilled())
             System.out.println("Circle is filled.");
         else
-            System.out.println("Circle is NOT filled.");
+            System.out.println("Circle is NOT filled."); 
     }
 }
