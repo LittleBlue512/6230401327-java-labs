@@ -20,7 +20,7 @@ public class MySimpleWindow extends JFrame {
     // Quick fix warning: Java(536871008) ~ Searched from Google.
     private static final long serialVersionUID = -5235778330626143850L;
 
-    // Constanst variables.
+    // Constant variables.
     private static final String defaultFrameTitle = "MySimpleWindow Title";
     private static final String cancelButtonString = "Cancel";
     private static final String okButtonString = "Ok";

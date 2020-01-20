@@ -13,7 +13,7 @@ public class PersonFormV1 extends MySimpleWindow {
     // Quick fix warning: Java(536871008) ~ Searched from Google.
     private static final long serialVersionUID = 3116509230184477773L;
 
-    // Constanst variables.
+    // Constant variables.
     private static final String defaultFrameTitle = "PersonFormV1 Title";
     private static final int textFieldLength = 15;
 
