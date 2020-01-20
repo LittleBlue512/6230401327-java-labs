@@ -10,6 +10,8 @@
 
 package sirimul.chattipoom.lab6;
 
+import java.awt.GridLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -25,11 +27,7 @@ public class MySimpleWindow extends JFrame {
     private static final String cancelButtonString = "Cancel";
     private static final String okButtonString = "Ok";
 
-    // Title of this class's object.
-    protected String frameTitle;
-
     // ---------- Components ----------
-    protected JFrame mainFrame;
     protected JPanel mainPanel;
     protected JButton cancelButton;
     protected JButton okButton;
@@ -38,48 +36,48 @@ public class MySimpleWindow extends JFrame {
     // A default constructor
     public MySimpleWindow() {
         // Set a default frame's title of this object.
-        this.frameTitle = defaultFrameTitle;
-        // Create a JFrame for this object.
-        this.mainFrame = new JFrame();
+        this.setTitle(defaultFrameTitle);
+        // Initialize components
+        createComponents();
     }
 
     // A constructor with one parameter: frame's title.
     public MySimpleWindow(String _frameTitle) {
         // Set a frame's title of this object.
-        this.frameTitle = _frameTitle;
-        // Create a JFrame for this object.
-        this.mainFrame = new JFrame();
+        this.setTitle(_frameTitle);
+        // Initialize components
+        createComponents();
+    }
+
+    // A method for initializing components
+    private void createComponents() {
+        // Create a JPanel for this object.
+        this.mainPanel = new JPanel();
+        // Create a JButtons for this object.
+        this.cancelButton = new JButton(cancelButtonString);
+        this.okButton = new JButton(okButtonString);
     }
 
     // A method for adding components to the main frame.
     protected void addComponents() {
-        // Create a JPanel for this object.
-        this.mainPanel = new JPanel();
-
-        // Create a JButtons for this object.
-        this.cancelButton = new JButton(cancelButtonString);
-        this.okButton = new JButton(okButtonString);
-
         // Add the buttons to the main panel.
         this.mainPanel.add(this.cancelButton);
         this.mainPanel.add(this.okButton);
 
         // Add the main panel to the main frame.
-        this.mainFrame.add(this.mainPanel);
+        this.add(this.mainPanel);
     }
 
     // A method for setting frame's features.
     protected void setFrameFeatures() {
-        // Set the JFrame's title.
-        this.mainFrame.setTitle(this.frameTitle);
         // Set the JFrame's sizes automatically by using pack().
-        this.mainFrame.pack();
+        this.pack();
         // Make the JFrame visible.
-        this.mainFrame.setVisible(true);
+        this.setVisible(true);
         // The program exit when the user clicks to close a frame.
-        this.mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // Set the window location at the center of the screen.
-        this.mainFrame.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
     }
 
     public static void createAndShowGUI() {

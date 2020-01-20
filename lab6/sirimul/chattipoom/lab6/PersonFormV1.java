@@ -2,6 +2,7 @@ package sirimul.chattipoom.lab6;
 
 import java.awt.GridLayout;
 
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -38,7 +39,7 @@ public class PersonFormV1 extends MySimpleWindow {
     // A default constructor.
     public PersonFormV1() {
         super();
-        this.frameTitle = defaultFrameTitle;
+        this.setTitle(defaultFrameTitle);
     }
 
     // A constructor with one parameter: frame's title.
@@ -72,17 +73,18 @@ public class PersonFormV1 extends MySimpleWindow {
         this.typeButtonGroup.add(this.studentRadioBtn);
         this.typeButtonGroup.add(this.teacherRadioBtn);
 
-        // Set layout of type buttons panel.
+        // Create panel for two type buttons.
         JPanel typeButtonPanel = new JPanel();
-        typeButtonPanel.setLayout(new GridLayout(1, 0));
 
-        // Add the components to the main panel.
+        // Add the buttons to the type button panel.
         typeButtonPanel.add(this.studentRadioBtn);
         typeButtonPanel.add(this.teacherRadioBtn);
 
-        // Set layout of form panel.
+        // Set layout
         JPanel formPanel = new JPanel();
         formPanel.setLayout(new GridLayout(0, 2));
+
+        this.mainPanel.setLayout(new BoxLayout(this.mainPanel, BoxLayout.Y_AXIS));
 
         // Add the components to the form panel.
         formPanel.add(this.nameLabel);
@@ -96,9 +98,7 @@ public class PersonFormV1 extends MySimpleWindow {
         formPanel.add(this.typeLabel);
         formPanel.add(typeButtonPanel);
 
-        this.mainFrame.setLayout(new GridLayout(0, 1));
-
-        this.mainFrame.add(formPanel);
+        this.mainPanel.add(formPanel);
 
         super.addComponents();
     }
