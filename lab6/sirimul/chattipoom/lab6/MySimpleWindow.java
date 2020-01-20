@@ -10,7 +10,7 @@
 
 package sirimul.chattipoom.lab6;
 
-import java.awt.GridLayout;
+import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,6 +27,10 @@ public class MySimpleWindow extends JFrame {
     private static final String cancelButtonString = "Cancel";
     private static final String okButtonString = "Ok";
 
+    // Layout's variables
+    protected int grid_x = 0;
+    protected int grid_y = 0;
+
     // ---------- Components ----------
     protected JPanel mainPanel;
     protected JButton cancelButton;
@@ -39,20 +43,23 @@ public class MySimpleWindow extends JFrame {
         this.setTitle(defaultFrameTitle);
         // Initialize components
         createComponents();
+        this.setLayout(new BorderLayout());
     }
 
     // A constructor with one parameter: frame's title.
-    public MySimpleWindow(String _frameTitle) {
+    public MySimpleWindow(final String _frameTitle) {
         // Set a frame's title of this object.
         this.setTitle(_frameTitle);
         // Initialize components
         createComponents();
+        this.setLayout(new BorderLayout());
     }
 
     // A method for initializing components
     private void createComponents() {
         // Create a JPanel for this object.
         this.mainPanel = new JPanel();
+
         // Create a JButtons for this object.
         this.cancelButton = new JButton(cancelButtonString);
         this.okButton = new JButton(okButtonString);
@@ -65,7 +72,7 @@ public class MySimpleWindow extends JFrame {
         this.mainPanel.add(this.okButton);
 
         // Add the main panel to the main frame.
-        this.add(this.mainPanel);
+        this.add(this.mainPanel, BorderLayout.PAGE_END);
     }
 
     // A method for setting frame's features.
@@ -81,12 +88,12 @@ public class MySimpleWindow extends JFrame {
     }
 
     public static void createAndShowGUI() {
-        MySimpleWindow msw = new MySimpleWindow("My Simple Window");
+        final MySimpleWindow msw = new MySimpleWindow("My Simple Window");
         msw.addComponents();
         msw.setFrameFeatures();
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();

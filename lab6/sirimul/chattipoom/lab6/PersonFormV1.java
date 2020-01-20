@@ -1,6 +1,8 @@
 package sirimul.chattipoom.lab6;
 
-import java.awt.GridLayout;
+import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -73,32 +75,50 @@ public class PersonFormV1 extends MySimpleWindow {
         this.typeButtonGroup.add(this.studentRadioBtn);
         this.typeButtonGroup.add(this.teacherRadioBtn);
 
-        // Create panel for two type buttons.
         JPanel typeButtonPanel = new JPanel();
 
-        // Add the buttons to the type button panel.
         typeButtonPanel.add(this.studentRadioBtn);
         typeButtonPanel.add(this.teacherRadioBtn);
 
-        // Set layout
         JPanel formPanel = new JPanel();
-        formPanel.setLayout(new GridLayout(0, 2));
 
-        this.mainPanel.setLayout(new BoxLayout(this.mainPanel, BoxLayout.Y_AXIS));
+        formPanel.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
 
         // Add the components to the form panel.
-        formPanel.add(this.nameLabel);
-        formPanel.add(this.nameTextField);
-        formPanel.add(this.heightLabel);
-        formPanel.add(this.heightTextField);
-        formPanel.add(this.weightLabel);
-        formPanel.add(this.weightTextField);
-        formPanel.add(this.dobLabel);
-        formPanel.add(this.dobTextField);
-        formPanel.add(this.typeLabel);
-        formPanel.add(typeButtonPanel);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        formPanel.add(this.nameLabel, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        formPanel.add(this.nameTextField, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        formPanel.add(this.heightLabel, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        formPanel.add(this.heightTextField, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        formPanel.add(this.weightLabel, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        formPanel.add(this.weightTextField, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        formPanel.add(this.dobLabel, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        formPanel.add(this.dobTextField, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        formPanel.add(this.typeLabel, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 4;
+        formPanel.add(typeButtonPanel, gbc);
 
-        this.mainPanel.add(formPanel);
+        this.add(formPanel, BorderLayout.CENTER);
 
         super.addComponents();
     }
