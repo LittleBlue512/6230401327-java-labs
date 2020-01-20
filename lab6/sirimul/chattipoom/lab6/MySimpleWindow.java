@@ -20,21 +20,32 @@ public class MySimpleWindow extends JFrame {
     // Quick fix warning: Java(536871008) ~ Searched from Google.
     private static final long serialVersionUID = -5235778330626143850L;
 
-    // Static variables for string in buttons.
-    static public String cancelButtonString = "Cancel";
-    static public String okButtonString = "Ok";
+    // Constanst variables.
+    private static final String defaultFrameTitle = "MySimpleWindow Title";
+    private static final String cancelButtonString = "Cancel";
+    private static final String okButtonString = "Ok";
 
-    private String frameTitle;
+    // Title of this class's object.
+    protected String frameTitle;
 
-    // Components
-    private JFrame mainFrame;
-    private JPanel mainPanel;
-    private JButton cancelButton;
-    private JButton okButton;
+    // ---------- Components ----------
+    protected JFrame mainFrame;
+    protected JPanel mainPanel;
+    protected JButton cancelButton;
+    protected JButton okButton;
+    // ---------- ---------- ----------
+
+    // A default constructor
+    public MySimpleWindow() {
+        // Set a default frame's title of this object.
+        this.frameTitle = defaultFrameTitle;
+        // Create a JFrame for this object.
+        this.mainFrame = new JFrame();
+    }
 
     // A constructor with one parameter: frame's title.
     public MySimpleWindow(String _frameTitle) {
-        // Set the frame title of this object.
+        // Set a frame's title of this object.
         this.frameTitle = _frameTitle;
         // Create a JFrame for this object.
         this.mainFrame = new JFrame();
@@ -57,7 +68,7 @@ public class MySimpleWindow extends JFrame {
         this.mainFrame.add(this.mainPanel);
     }
 
-    // A method for setting frame features.
+    // A method for setting frame's features.
     protected void setFrameFeatures() {
         // Set the JFrame's title.
         this.mainFrame.setTitle(this.frameTitle);
