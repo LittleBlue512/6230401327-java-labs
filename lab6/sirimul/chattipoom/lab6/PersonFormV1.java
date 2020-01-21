@@ -35,21 +35,26 @@ public class PersonFormV1 extends MySimpleWindow {
     protected JRadioButton studentRadioBtn;
     protected JRadioButton teacherRadioBtn;
 
-    protected ButtonGroup typeButtonGroup;
+    protected ButtonGroup radiaButtonGroup;
+
+    protected JPanel radioButtonPanel;
+    protected JPanel formPanel;
     // ---------- ---------- ----------
 
     // A default constructor.
     public PersonFormV1() {
         super(defaultFrameTitle);
+        createComponents();
     }
 
     // A constructor with one parameter: frame's title.
     public PersonFormV1(String _frameTitle) {
         super(_frameTitle);
+        createComponents();
     }
 
-    @Override
-    protected void addComponents() {
+    // Initialize components
+    private void createComponents() {
         // Create labels.
         this.nameLabel = new JLabel("Name:");
         this.heightLabel = new JLabel("Height (cm.):");
@@ -68,58 +73,66 @@ public class PersonFormV1 extends MySimpleWindow {
         this.teacherRadioBtn = new JRadioButton("Teacher");
 
         // Create a button group.
-        this.typeButtonGroup = new ButtonGroup();
-
-        // Add two type buttons to the button group.
-        this.typeButtonGroup.add(this.studentRadioBtn);
-        this.typeButtonGroup.add(this.teacherRadioBtn);
+        this.radiaButtonGroup = new ButtonGroup();
 
         // Create a panel for two radio buttons.
-        JPanel typeButtonPanel = new JPanel();
+        this.radioButtonPanel = new JPanel();
 
-        typeButtonPanel.add(this.studentRadioBtn);
-        typeButtonPanel.add(this.teacherRadioBtn);
+        // Create form panel
+        this.formPanel = new JPanel();
+    }
 
-        JPanel formPanel = new JPanel();
+    @Override
+    protected void addComponents() {
+        // Add two type buttons to the button group.
+        this.radiaButtonGroup.add(this.studentRadioBtn);
+        this.radiaButtonGroup.add(this.teacherRadioBtn);
 
-        formPanel.setLayout(new GridBagLayout());
+        // Add two type buttons to the button panel.
+        this.radioButtonPanel.add(this.studentRadioBtn);
+        this.radioButtonPanel.add(this.teacherRadioBtn);
+
+        // Set Layout for the form panel.
+        this.formPanel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
         // Add the components to the form panel.
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 0;
         gbc.gridy = 0;
-        formPanel.add(this.nameLabel, gbc);
+        this.formPanel.add(this.nameLabel, gbc);
         gbc.gridx = 1;
         gbc.gridy = 0;
-        formPanel.add(this.nameTextField, gbc);
+        this.formPanel.add(this.nameTextField, gbc);
         gbc.gridx = 0;
         gbc.gridy = 1;
-        formPanel.add(this.heightLabel, gbc);
+        this.formPanel.add(this.heightLabel, gbc);
         gbc.gridx = 1;
         gbc.gridy = 1;
-        formPanel.add(this.heightTextField, gbc);
+        this.formPanel.add(this.heightTextField, gbc);
         gbc.gridx = 0;
         gbc.gridy = 2;
-        formPanel.add(this.weightLabel, gbc);
+        this.formPanel.add(this.weightLabel, gbc);
         gbc.gridx = 1;
         gbc.gridy = 2;
-        formPanel.add(this.weightTextField, gbc);
+        this.formPanel.add(this.weightTextField, gbc);
         gbc.gridx = 0;
         gbc.gridy = 3;
-        formPanel.add(this.dobLabel, gbc);
+        this.formPanel.add(this.dobLabel, gbc);
         gbc.gridx = 1;
         gbc.gridy = 3;
-        formPanel.add(this.dobTextField, gbc);
+        this.formPanel.add(this.dobTextField, gbc);
         gbc.gridx = 0;
         gbc.gridy = 4;
-        formPanel.add(this.typeLabel, gbc);
+        this.formPanel.add(this.typeLabel, gbc);
         gbc.gridx = 1;
         gbc.gridy = 4;
-        formPanel.add(typeButtonPanel, gbc);
+        this.formPanel.add(this.radioButtonPanel, gbc);
 
-        this.add(formPanel, BorderLayout.CENTER);
+        // Add from panel to main frame.
+        this.add(this.formPanel, BorderLayout.CENTER);
 
+        // Add MySimpleWindow's components to main frame.
         super.addComponents();
     }
 
