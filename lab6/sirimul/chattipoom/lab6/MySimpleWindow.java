@@ -27,10 +27,6 @@ public class MySimpleWindow extends JFrame {
     private static final String cancelButtonString = "Cancel";
     private static final String okButtonString = "Ok";
 
-    // Layout's variables
-    protected int grid_x = 0;
-    protected int grid_y = 0;
-
     // ---------- Components ----------
     protected JPanel mainPanel;
     protected JButton cancelButton;
@@ -47,7 +43,7 @@ public class MySimpleWindow extends JFrame {
     }
 
     // A constructor with one parameter: frame's title.
-    public MySimpleWindow(final String _frameTitle) {
+    public MySimpleWindow(String _frameTitle) {
         // Set a frame's title of this object.
         this.setTitle(_frameTitle);
         // Initialize components
@@ -60,7 +56,7 @@ public class MySimpleWindow extends JFrame {
         // Create a JPanel for this object.
         this.mainPanel = new JPanel();
 
-        // Create a JButtons for this object.
+        // Create JButtons for this object.
         this.cancelButton = new JButton(cancelButtonString);
         this.okButton = new JButton(okButtonString);
     }
@@ -71,7 +67,7 @@ public class MySimpleWindow extends JFrame {
         this.mainPanel.add(this.cancelButton);
         this.mainPanel.add(this.okButton);
 
-        // Add the main panel to the main frame.
+        // Add the main panel to the main frame. (Put it at the center)
         this.add(this.mainPanel, BorderLayout.PAGE_END);
     }
 

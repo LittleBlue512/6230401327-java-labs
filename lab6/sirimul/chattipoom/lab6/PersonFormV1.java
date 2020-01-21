@@ -40,8 +40,7 @@ public class PersonFormV1 extends MySimpleWindow {
 
     // A default constructor.
     public PersonFormV1() {
-        super();
-        this.setTitle(defaultFrameTitle);
+        super(defaultFrameTitle);
     }
 
     // A constructor with one parameter: frame's title.
@@ -75,6 +74,7 @@ public class PersonFormV1 extends MySimpleWindow {
         this.typeButtonGroup.add(this.studentRadioBtn);
         this.typeButtonGroup.add(this.teacherRadioBtn);
 
+        // Create a panel for two radio buttons.
         JPanel typeButtonPanel = new JPanel();
 
         typeButtonPanel.add(this.studentRadioBtn);
