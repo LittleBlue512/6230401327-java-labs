@@ -39,20 +39,16 @@ public class MySimpleWindow extends JFrame {
     public MySimpleWindow() {
         // Set a default frame's title of this object.
         super(defaultFrameTitle);
-        // Initialize components
-        createComponents();
     }
 
     // A constructor with one parameter: frame's title.
     public MySimpleWindow(String _frameTitle) {
         // Set a frame's title of this object.
         super(_frameTitle);
-        // Initialize components
-        createComponents();
     }
 
     // A method for initializing components
-    private void createComponents() {
+    protected void createComponents() {
         // Create JPanels
         this.mainPanel = new JPanel(new BorderLayout());
         this.buttonPanel = new JPanel();
@@ -89,6 +85,10 @@ public class MySimpleWindow extends JFrame {
 
     public static void createAndShowGUI() {
         final MySimpleWindow msw = new MySimpleWindow("My Simple Window");
+
+        // Initialize components
+        msw.createComponents();
+
         msw.addComponents();
         msw.setFrameFeatures();
     }

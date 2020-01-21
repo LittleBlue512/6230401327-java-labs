@@ -53,17 +53,19 @@ public class PersonFormV1 extends MySimpleWindow {
     // A default constructor.
     public PersonFormV1() {
         super(defaultFrameTitle);
-        createComponents();
     }
 
     // A constructor with one parameter: frame's title.
     public PersonFormV1(String _frameTitle) {
         super(_frameTitle);
-        createComponents();
     }
 
     // Initialize components
-    private void createComponents() {
+    @Override
+    protected void createComponents() {
+        // Call the super's method.
+        super.createComponents();
+
         // Create labels.
         this.nameLabel = new JLabel("Name:");
         this.heightLabel = new JLabel("Height (cm.):");
@@ -147,6 +149,10 @@ public class PersonFormV1 extends MySimpleWindow {
 
     public static void createAndShowGUI() {
         PersonFormV1 personFormV1 = new PersonFormV1("Person form V1");
+
+        // Initialize components.
+        personFormV1.createComponents();
+
         personFormV1.addComponents();
         personFormV1.setFrameFeatures();
     }
