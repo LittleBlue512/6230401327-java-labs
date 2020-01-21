@@ -1,4 +1,13 @@
-package sirimul.chattipoom.lab6;
+/**
+ * This program is to create a class called PersonFormV1 which extends from class MySimpleWindow.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: January 20, 2020
+ */
+
+ package sirimul.chattipoom.lab6;
 
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
