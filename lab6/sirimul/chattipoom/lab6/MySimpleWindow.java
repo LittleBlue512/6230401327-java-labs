@@ -29,6 +29,8 @@ public class MySimpleWindow extends JFrame {
 
     // ---------- Components ----------
     protected JPanel mainPanel;
+    protected JPanel buttonPanel;
+
     protected JButton cancelButton;
     protected JButton okButton;
     // ---------- ---------- ----------
@@ -36,25 +38,24 @@ public class MySimpleWindow extends JFrame {
     // A default constructor
     public MySimpleWindow() {
         // Set a default frame's title of this object.
-        this.setTitle(defaultFrameTitle);
+        super(defaultFrameTitle);
         // Initialize components
         createComponents();
-        this.setLayout(new BorderLayout());
     }
 
     // A constructor with one parameter: frame's title.
     public MySimpleWindow(String _frameTitle) {
         // Set a frame's title of this object.
-        this.setTitle(_frameTitle);
+        super(_frameTitle);
         // Initialize components
         createComponents();
-        this.setLayout(new BorderLayout());
     }
 
     // A method for initializing components
     private void createComponents() {
-        // Create a JPanel for this object.
-        this.mainPanel = new JPanel();
+        // Create JPanels
+        this.mainPanel = new JPanel(new BorderLayout());
+        this.buttonPanel = new JPanel();
 
         // Create JButtons for this object.
         this.cancelButton = new JButton(cancelButtonString);
@@ -64,11 +65,13 @@ public class MySimpleWindow extends JFrame {
     // A method for adding components to the main frame.
     protected void addComponents() {
         // Add the buttons to the main panel.
-        this.mainPanel.add(this.cancelButton);
-        this.mainPanel.add(this.okButton);
+        this.buttonPanel.add(this.cancelButton);
+        this.buttonPanel.add(this.okButton);
+
+        this.mainPanel.add(this.buttonPanel, BorderLayout.PAGE_END);
 
         // Add the main panel to the main frame. (Put it at the center)
-        this.add(this.mainPanel, BorderLayout.PAGE_END);
+        this.add(this.mainPanel);
     }
 
     // A method for setting frame's features.

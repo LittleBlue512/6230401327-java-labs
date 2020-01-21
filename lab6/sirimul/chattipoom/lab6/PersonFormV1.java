@@ -139,7 +139,7 @@ public class PersonFormV1 extends MySimpleWindow {
         this.formPanel.add(this.radioButtonPanel, gbc);
 
         // Add from panel to main frame.
-        this.add(this.formPanel, BorderLayout.CENTER);
+        this.mainPanel.add(this.formPanel, BorderLayout.CENTER);
 
         // Add MySimpleWindow's components to main frame.
         super.addComponents();
