@@ -78,7 +78,7 @@ public class PersonFormV1 extends MySimpleWindow {
         // Create a panel for two radio buttons.
         this.radioButtonPanel = new JPanel();
 
-        // Create form panel
+        // Create a form panel
         this.formPanel = new JPanel();
     }
 
