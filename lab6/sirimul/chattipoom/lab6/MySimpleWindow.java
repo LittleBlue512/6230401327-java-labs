@@ -68,6 +68,7 @@ public class MySimpleWindow extends JFrame {
         this.buttonPanel.add(this.cancelButton);
         this.buttonPanel.add(this.okButton);
 
+        // Add the button panel to the main panel and put it at the end.
         this.mainPanel.add(this.buttonPanel, BorderLayout.PAGE_END);
 
         // Add the main panel to the main frame. (Put it at the center)
