@@ -7,11 +7,9 @@
  * Date: January 20, 2020
  */
 
- package sirimul.chattipoom.lab6;
+package sirimul.chattipoom.lab6;
 
-import java.awt.BorderLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
@@ -85,64 +83,40 @@ public class PersonFormV1 extends MySimpleWindow {
         // Create a button group.
         this.radiaButtonGroup = new ButtonGroup();
 
-        // Create a panel for two radio buttons.
+        // Create panels
         this.radioButtonPanel = new JPanel();
-
-        // Create a form panel
         this.formPanel = new JPanel();
     }
 
     @Override
     protected void addComponents() {
-        // Add two type buttons to the button group.
+        // Add two radio buttons to the button group.
         this.radiaButtonGroup.add(this.studentRadioBtn);
         this.radiaButtonGroup.add(this.teacherRadioBtn);
 
-        // Add two type buttons to the button panel.
+        // Add two radio buttons to the button panel.
         this.radioButtonPanel.add(this.studentRadioBtn);
         this.radioButtonPanel.add(this.teacherRadioBtn);
 
         // Set Layout for the form panel.
-        this.formPanel.setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
+        this.formPanel.setLayout(new GridLayout(0, 2));
 
         // Add the components to the form panel.
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        this.formPanel.add(this.nameLabel, gbc);
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        this.formPanel.add(this.nameTextField, gbc);
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        this.formPanel.add(this.heightLabel, gbc);
-        gbc.gridx = 1;
-        gbc.gridy = 1;
-        this.formPanel.add(this.heightTextField, gbc);
-        gbc.gridx = 0;
-        gbc.gridy = 2;
-        this.formPanel.add(this.weightLabel, gbc);
-        gbc.gridx = 1;
-        gbc.gridy = 2;
-        this.formPanel.add(this.weightTextField, gbc);
-        gbc.gridx = 0;
-        gbc.gridy = 3;
-        this.formPanel.add(this.dobLabel, gbc);
-        gbc.gridx = 1;
-        gbc.gridy = 3;
-        this.formPanel.add(this.dobTextField, gbc);
-        gbc.gridx = 0;
-        gbc.gridy = 4;
-        this.formPanel.add(this.typeLabel, gbc);
-        gbc.gridx = 1;
-        gbc.gridy = 4;
-        this.formPanel.add(this.radioButtonPanel, gbc);
+        this.formPanel.add(this.nameLabel);
+        this.formPanel.add(this.nameTextField);
+        this.formPanel.add(this.heightLabel);
+        this.formPanel.add(this.heightTextField);
+        this.formPanel.add(this.weightLabel);
+        this.formPanel.add(this.weightTextField);
+        this.formPanel.add(this.dobLabel);
+        this.formPanel.add(this.dobTextField);
+        this.formPanel.add(this.typeLabel);
+        this.formPanel.add(this.radioButtonPanel);
 
-        // Add from panel to main frame.
-        this.mainPanel.add(this.formPanel, BorderLayout.CENTER);
+        // Add from panel to center panel.
+        this.centerPanel.add(this.formPanel);
 
-        // Add MySimpleWindow's components to main frame.
+        // Call super's method.
         super.addComponents();
     }
 

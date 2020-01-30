@@ -15,6 +15,7 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.BoxLayout;
 
 import javax.swing.SwingUtilities;
 
@@ -29,45 +30,59 @@ public class MySimpleWindow extends JFrame {
 
     // ---------- Components ----------
     protected JPanel mainPanel;
+    protected JPanel startPanel;
+    protected JPanel centerPanel;
+    protected JPanel endPanel;
+    
     protected JPanel buttonPanel;
 
     protected JButton cancelButton;
     protected JButton okButton;
     // ---------- ---------- ----------
 
-    // A default constructor
+    // A default constructor.
     public MySimpleWindow() {
-        // Set a default frame's title of this object.
         super(defaultFrameTitle);
     }
 
     // A constructor with one parameter: frame's title.
     public MySimpleWindow(String _frameTitle) {
-        // Set a frame's title of this object.
         super(_frameTitle);
     }
 
     // A method for initializing components
     protected void createComponents() {
-        // Create JPanels
+        // Create panels.
         this.mainPanel = new JPanel(new BorderLayout());
         this.buttonPanel = new JPanel();
 
-        // Create JButtons for this object.
+        // Create sub-panels for mainPanel: start, center, end
+        this.startPanel = new JPanel();
+        this.startPanel.setLayout(new BoxLayout(this.startPanel, BoxLayout.Y_AXIS));
+        this.centerPanel = new JPanel();
+        this.startPanel.setLayout(new BoxLayout(this.startPanel, BoxLayout.Y_AXIS));
+        this.endPanel = new JPanel();
+        this.startPanel.setLayout(new BoxLayout(this.startPanel, BoxLayout.Y_AXIS));
+
+        // Create buttons.
         this.cancelButton = new JButton(cancelButtonString);
         this.okButton = new JButton(okButtonString);
     }
 
-    // A method for adding components to the main frame.
     protected void addComponents() {
-        // Add the buttons to the main panel.
-        this.buttonPanel.add(this.cancelButton);
-        this.buttonPanel.add(this.okButton);
+        // Add buttons to buttonPanel.
+        buttonPanel.add(this.okButton);
+        buttonPanel.add(this.cancelButton);
 
-        // Add the button panel to the main panel and put it at the end.
-        this.mainPanel.add(this.buttonPanel, BorderLayout.PAGE_END);
+        // Add buttonPanel to endPanel.
+        this.endPanel.add(this.buttonPanel);
 
-        // Add the main panel to the main frame. (Put it at the center)
+        // Add sub-panels to its position in mainPanel.
+        this.mainPanel.add(this.startPanel, BorderLayout.PAGE_START);
+        this.mainPanel.add(this.centerPanel, BorderLayout.CENTER);
+        this.mainPanel.add(this.endPanel, BorderLayout.PAGE_END);
+
+        // Add main panel to the frame.
         this.add(this.mainPanel);
     }
 
