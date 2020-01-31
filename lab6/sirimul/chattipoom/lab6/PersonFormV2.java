@@ -28,14 +28,13 @@ public class PersonFormV2 extends PersonFormV1 {
     private static final String defaultFrameTitle = "PersonFormV2 Title";
 
     // Class's variables
-    private static String[] sports = { "Running", "Swimimg", "Tennis" }; // <----- Will make this editable!!!
+    private static String[] sports = { "Running", "Swimimg", "Tennis" };
 
     // ---------- Components ----------
     protected JComboBox<String> sportComboBox;
     protected JLabel sportLabel;
     protected JLabel noteLabel;
     protected JTextArea noteTextArea;
-    protected JPanel formPanelV2;
     protected JPanel notePanel;
     protected JScrollPane noteScrollPane;
     // ---------- ---------- ----------
@@ -55,7 +54,6 @@ public class PersonFormV2 extends PersonFormV1 {
         this.sportComboBox = new JComboBox<String>(sports);
         this.sportLabel = new JLabel("Sports:");
         this.noteLabel = new JLabel("Note:");
-        this.formPanelV2 = new JPanel(new GridBagLayout());
         this.notePanel = new JPanel(new GridBagLayout());
         this.noteTextArea = new JTextArea(2, 35);
         this.noteScrollPane = new JScrollPane(this.noteTextArea);
@@ -71,11 +69,12 @@ public class PersonFormV2 extends PersonFormV1 {
         gbc.weighty = 1.0;
         gbc.weightx = 1.0;
         gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         // Add noteLabel and noteScrollPane to notePanel.
-        gbc.anchor = GridBagConstraints.WEST;
         gbc.gridy = 0;
         gbc.gridx = 0;
+        gbc.anchor = GridBagConstraints.WEST;
         this.notePanel.add(this.noteLabel, gbc);
         gbc.gridy = 1;
         gbc.gridx = 0;
@@ -84,20 +83,17 @@ public class PersonFormV2 extends PersonFormV1 {
         // Add notePanel to end panel.
         this.endPanel.add(this.notePanel);
 
-        super.addComponents();
-
-        // Add sportLabel and sportComboBox to fromPanelV2.
-        gbc.gridy = 0;
+        // Add sportLabel and sportComboBox to fromPanelV1.
+        gbc.gridy = 5;
         gbc.gridx = 0;
         gbc.anchor = GridBagConstraints.WEST;
-        this.formPanelV2.add(this.sportLabel, gbc);
-        gbc.gridy = 0;
+        this.formPanelV1.add(this.sportLabel, gbc);
+        gbc.gridy = 5;
         gbc.gridx = 1;
         gbc.anchor = GridBagConstraints.EAST;
-        this.formPanelV2.add(this.sportComboBox, gbc);
+        this.formPanelV1.add(this.sportComboBox, gbc);
 
-        // Add from panel to center panel.
-        this.centerPanel.add(this.formPanelV2);
+        super.addComponents();
     }
 
     public static void createAndShowGUI() {

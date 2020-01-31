@@ -10,14 +10,13 @@
 package sirimul.chattipoom.lab6;
 
 import java.awt.Insets;
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
+import javax.swing.JList;
+import javax.swing.JMenu;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JComboBox;
-import javax.swing.JScrollPane;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.SwingUtilities;
 
 public class PersonFormV3 extends PersonFormV2 {
@@ -27,8 +26,15 @@ public class PersonFormV3 extends PersonFormV2 {
     // Constant variables.
     private static final String defaultFrameTitle = "PersonFormV3 Title";
 
-    // ---------- Components ----------
+    // Class's variables
+    protected static String[] hobbies = { "Reading", "Traveling", "Cooking", "Photography" };
 
+    // ---------- Components ----------
+    protected JList<String> hobbyList;
+    protected JLabel hobbyLabel;
+    protected JMenuBar mainMenuBar;
+    protected JMenu fileMenu, configMenu;
+    protected JMenuItem newMenuItem, openMenuItem, saveMenuItem, exitMenuItem, colorMenuItem, sizeMenuItem;
     // ---------- ---------- ----------
 
     public PersonFormV3() {
@@ -41,12 +47,56 @@ public class PersonFormV3 extends PersonFormV2 {
 
     @Override
     protected void createComponents() {
+        super.createComponents();
 
+        this.hobbyList = new JList<String>(hobbies);
+        this.hobbyLabel = new JLabel("Hobbies:");
+        this.mainMenuBar = new JMenuBar();
+        this.fileMenu = new JMenu("File");
+        this.configMenu = new JMenu("Config");
+        this.newMenuItem = new JMenuItem("New");
+        this.openMenuItem = new JMenuItem("Open");
+        this.saveMenuItem = new JMenuItem("Save");
+        this.exitMenuItem = new JMenuItem("Exit");
+        this.colorMenuItem = new JMenuItem("Color");
+        this.sizeMenuItem = new JMenuItem("Size");
     }
 
     @Override
     protected void addComponents() {
+        GridBagConstraints gbc = new GridBagConstraints();
 
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        // Add hobbyLabel and hobbyList to formPanelV1.
+        gbc.gridy = 6;
+        gbc.gridx = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.formPanelV1.add(this.hobbyLabel, gbc);
+        gbc.gridy = 6;
+        gbc.gridx = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        this.formPanelV1.add(this.hobbyList, gbc);
+
+        // Add MenuItems to Menu
+        this.fileMenu.add(this.newMenuItem);
+        this.fileMenu.add(this.openMenuItem);
+        this.fileMenu.add(this.saveMenuItem);
+        this.fileMenu.add(this.exitMenuItem);
+        this.configMenu.add(this.colorMenuItem);
+        this.configMenu.add(this.sizeMenuItem);
+
+        // Add Menu to MenuBar
+        this.mainMenuBar.add(this.fileMenu);
+        this.mainMenuBar.add(this.configMenu);
+
+        // Add MenuBar to the frame
+        this.setJMenuBar(this.mainMenuBar);
+
+        super.addComponents();
     }
 
     public static void createAndShowGUI() {

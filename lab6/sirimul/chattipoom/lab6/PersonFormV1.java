@@ -108,6 +108,7 @@ public class PersonFormV1 extends MySimpleWindow {
         gbc.weighty = 1.0;
         gbc.weightx = 1.0;
         gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         // Add the components to the form panel.
         gbc.gridy = 0;
