@@ -33,7 +33,7 @@ public class MySimpleWindow extends JFrame {
     protected JPanel startPanel;
     protected JPanel centerPanel;
     protected JPanel endPanel;
-    
+
     protected JPanel buttonPanel;
 
     protected JButton cancelButton;
@@ -60,9 +60,9 @@ public class MySimpleWindow extends JFrame {
         this.startPanel = new JPanel();
         this.startPanel.setLayout(new BoxLayout(this.startPanel, BoxLayout.Y_AXIS));
         this.centerPanel = new JPanel();
-        this.startPanel.setLayout(new BoxLayout(this.startPanel, BoxLayout.Y_AXIS));
+        this.centerPanel.setLayout(new BoxLayout(this.centerPanel, BoxLayout.Y_AXIS));
         this.endPanel = new JPanel();
-        this.startPanel.setLayout(new BoxLayout(this.startPanel, BoxLayout.Y_AXIS));
+        this.endPanel.setLayout(new BoxLayout(this.endPanel, BoxLayout.Y_AXIS));
 
         // Create buttons.
         this.cancelButton = new JButton(cancelButtonString);

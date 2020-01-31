@@ -9,7 +9,9 @@
 
 package sirimul.chattipoom.lab6;
 
-import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
@@ -19,8 +21,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class PersonFormV1 extends MySimpleWindow {
-    // Quick fix warning: Java(536871008) ~ Searched from Google.
-    private static final long serialVersionUID = 3116509230184477773L;
+    // Quick fix warning: Java(536871008)
+    private static final long serialVersionUID = 1L;
 
     // Constant variables.
     private static final String defaultFrameTitle = "PersonFormV1 Title";
@@ -44,7 +46,7 @@ public class PersonFormV1 extends MySimpleWindow {
     protected ButtonGroup radiaButtonGroup;
 
     protected JPanel radioButtonPanel;
-    protected JPanel formPanel;
+    protected JPanel formPanelV1;
     // ---------- ---------- ----------
 
     // A default constructor.
@@ -57,7 +59,6 @@ public class PersonFormV1 extends MySimpleWindow {
         super(_frameTitle);
     }
 
-    // Initialize components
     @Override
     protected void createComponents() {
         // Call the super's method.
@@ -85,11 +86,14 @@ public class PersonFormV1 extends MySimpleWindow {
 
         // Create panels
         this.radioButtonPanel = new JPanel();
-        this.formPanel = new JPanel();
+        this.formPanelV1 = new JPanel(new GridBagLayout());
     }
 
     @Override
     protected void addComponents() {
+        // Call super's method.
+        super.addComponents();
+
         // Add two radio buttons to the button group.
         this.radiaButtonGroup.add(this.studentRadioBtn);
         this.radiaButtonGroup.add(this.teacherRadioBtn);
@@ -99,25 +103,56 @@ public class PersonFormV1 extends MySimpleWindow {
         this.radioButtonPanel.add(this.teacherRadioBtn);
 
         // Set Layout for the form panel.
-        this.formPanel.setLayout(new GridLayout(0, 2));
+        GridBagConstraints gbc = new GridBagConstraints();
+
+        gbc.weighty = 1.0;
+        gbc.weightx = 1.0;
+        gbc.insets = new Insets(5, 5, 5, 5);
 
         // Add the components to the form panel.
-        this.formPanel.add(this.nameLabel);
-        this.formPanel.add(this.nameTextField);
-        this.formPanel.add(this.heightLabel);
-        this.formPanel.add(this.heightTextField);
-        this.formPanel.add(this.weightLabel);
-        this.formPanel.add(this.weightTextField);
-        this.formPanel.add(this.dobLabel);
-        this.formPanel.add(this.dobTextField);
-        this.formPanel.add(this.typeLabel);
-        this.formPanel.add(this.radioButtonPanel);
+        gbc.gridy = 0;
+        gbc.gridx = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.formPanelV1.add(this.nameLabel, gbc);
+        gbc.gridy = 0;
+        gbc.gridx = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        this.formPanelV1.add(this.nameTextField, gbc);
+        gbc.gridy = 1;
+        gbc.gridx = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.formPanelV1.add(this.heightLabel, gbc);
+        gbc.gridy = 1;
+        gbc.gridx = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        this.formPanelV1.add(this.heightTextField, gbc);
+        gbc.gridy = 2;
+        gbc.gridx = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.formPanelV1.add(this.weightLabel, gbc);
+        gbc.gridy = 2;
+        gbc.gridx = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        this.formPanelV1.add(this.weightTextField, gbc);
+        gbc.gridy = 3;
+        gbc.gridx = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.formPanelV1.add(this.dobLabel, gbc);
+        gbc.gridy = 3;
+        gbc.gridx = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        this.formPanelV1.add(this.dobTextField, gbc);
+        gbc.gridy = 4;
+        gbc.gridx = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        this.formPanelV1.add(this.typeLabel, gbc);
+        gbc.gridy = 4;
+        gbc.gridx = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        this.formPanelV1.add(this.radioButtonPanel, gbc);
 
         // Add from panel to center panel.
-        this.centerPanel.add(this.formPanel);
-
-        // Call super's method.
-        super.addComponents();
+        this.centerPanel.add(this.formPanelV1);
     }
 
     public static void createAndShowGUI() {
