@@ -13,11 +13,11 @@ import java.awt.Insets;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
-import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.ButtonGroup;
+import javax.swing.JRadioButton;
 import javax.swing.SwingUtilities;
 
 public class PersonFormV1 extends MySimpleWindow {
