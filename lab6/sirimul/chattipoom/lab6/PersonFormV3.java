@@ -45,6 +45,24 @@ public class PersonFormV3 extends PersonFormV2 {
         super(_frameTitle);
     }
 
+    // A method for initializing and adding menus to the window. 
+    protected void addMenu() {
+        // Add MenuItems to Menu
+        this.fileMenu.add(this.newMenuItem);
+        this.fileMenu.add(this.openMenuItem);
+        this.fileMenu.add(this.saveMenuItem);
+        this.fileMenu.add(this.exitMenuItem);
+        this.configMenu.add(this.colorMenuItem);
+        this.configMenu.add(this.sizeMenuItem);
+
+        // Add Menu to MenuBar
+        this.mainMenuBar.add(this.fileMenu);
+        this.mainMenuBar.add(this.configMenu);
+
+        // Add MenuBar to the frame
+        this.setJMenuBar(this.mainMenuBar);
+    }
+
     @Override
     protected void createComponents() {
         super.createComponents();
@@ -81,20 +99,8 @@ public class PersonFormV3 extends PersonFormV2 {
         gbc.anchor = GridBagConstraints.EAST;
         this.formPanelV1.add(this.hobbyList, gbc);
 
-        // Add MenuItems to Menu
-        this.fileMenu.add(this.newMenuItem);
-        this.fileMenu.add(this.openMenuItem);
-        this.fileMenu.add(this.saveMenuItem);
-        this.fileMenu.add(this.exitMenuItem);
-        this.configMenu.add(this.colorMenuItem);
-        this.configMenu.add(this.sizeMenuItem);
-
-        // Add Menu to MenuBar
-        this.mainMenuBar.add(this.fileMenu);
-        this.mainMenuBar.add(this.configMenu);
-
-        // Add MenuBar to the frame
-        this.setJMenuBar(this.mainMenuBar);
+        // Add menu
+        this.addMenu();
 
         super.addComponents();
     }
