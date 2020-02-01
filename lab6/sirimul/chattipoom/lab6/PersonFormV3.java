@@ -45,7 +45,7 @@ public class PersonFormV3 extends PersonFormV2 {
         super(_frameTitle);
     }
 
-    // A method for initializing and adding menus to the window. 
+    // A method for adding menus to the window. 
     protected void addMenu() {
         // Add MenuItems to Menu
         this.fileMenu.add(this.newMenuItem);
