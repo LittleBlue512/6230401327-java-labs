@@ -1,5 +1,5 @@
 /**
- * This program is to create a class called PersonFormV3 which extends from class PersonFormV3.
+ * This program is to create a class called PersonFormV3 which extends from class PersonFormV2.
  * 
  * Author: Chattipoom Sirimul
  * ID: 623040132-7
