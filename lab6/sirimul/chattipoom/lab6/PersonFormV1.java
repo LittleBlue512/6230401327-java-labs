@@ -29,24 +29,11 @@ public class PersonFormV1 extends MySimpleWindow {
     private static final int textFieldLength = 15;
 
     // ---------- Components ----------
-    protected JLabel nameLabel;
-    protected JLabel heightLabel;
-    protected JLabel weightLabel;
-    protected JLabel dobLabel;
-    protected JLabel typeLabel;
-
-    protected JTextField nameTextField;
-    protected JTextField heightTextField;
-    protected JTextField weightTextField;
-    protected JTextField dobTextField;
-
-    protected JRadioButton studentRadioBtn;
-    protected JRadioButton teacherRadioBtn;
-
+    protected JLabel nameLabel, heightLabel, weightLabel, dobLabel, typeLabel;
+    protected JTextField nameTextField, heightTextField, weightTextField, dobTextField;
+    protected JRadioButton studentRadioBtn, teacherRadioBtn;
     protected ButtonGroup radiaButtonGroup;
-
-    protected JPanel radioButtonPanel;
-    protected JPanel formPanelV1;
+    protected JPanel radioButtonPanel, formPanelV1;
     // ---------- ---------- ----------
 
     // A default constructor.

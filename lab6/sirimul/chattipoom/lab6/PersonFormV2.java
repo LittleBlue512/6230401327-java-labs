@@ -33,8 +33,7 @@ public class PersonFormV2 extends PersonFormV1 {
 
     // ---------- Components ----------
     protected JComboBox<String> sportComboBox;
-    protected JLabel sportLabel;
-    protected JLabel noteLabel;
+    protected JLabel sportLabel, noteLabel;
     protected JTextArea noteTextArea;
     protected JPanel notePanel;
     protected JScrollPane noteScrollPane;

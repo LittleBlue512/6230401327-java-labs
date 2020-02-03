@@ -78,7 +78,7 @@ public class PersonFormV5 extends PersonFormV4 {
         // Select the "second" element of the sports ComboBox. (0-based indexing)
         this.sportComboBox.setSelectedIndex(1);
 
-        // Select the "first" and "fourth" elements of the hobby list. (0-based indexing)
+        // Select the "first" and "fourth" elements of the hobbies list. (0-based indexing)
         this.hobbyList.setSelectedIndices(new int[] { 0, 3 });
     }
 

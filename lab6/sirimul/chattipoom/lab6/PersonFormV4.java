@@ -79,7 +79,7 @@ public class PersonFormV4 extends PersonFormV3 {
         this.configMenu.remove(this.colorMenuItem);
         this.configMenu.remove(this.sizeMenuItem);
 
-        // Add MenuItem to the new menus.
+        // Add MenuItems to the new menus.
         this.newColorMenu.add(this.redMenuItem);
         this.newColorMenu.add(this.greenMenuItem);
         this.newColorMenu.add(this.blueMenuItem);

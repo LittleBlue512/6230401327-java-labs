@@ -57,6 +57,8 @@ public class MySimpleWindow extends JFrame {
         this.buttonPanel = new JPanel();
 
         // Create sub-panels for mainPanel: start, center, end
+        // *** I use "BoxLayout" because I can add components to the panel without displacing the old one.
+        // BoxLayout.Y_AXIS allows us to align components on the Y-axis.
         this.startPanel = new JPanel();
         this.startPanel.setLayout(new BoxLayout(this.startPanel, BoxLayout.Y_AXIS));
         this.centerPanel = new JPanel();
