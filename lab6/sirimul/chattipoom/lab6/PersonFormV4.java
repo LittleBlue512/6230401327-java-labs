@@ -45,24 +45,6 @@ public class PersonFormV4 extends PersonFormV3 {
         super(_frameTitle);
     }
 
-    protected void addSubMenu() {
-        this.configMenu.remove(this.colorMenuItem);
-        this.configMenu.remove(this.sizeMenuItem);
-
-        this.newColorMenu = new JMenu("Color");
-        this.newSizeMenu = new JMenu("Size");
-
-        this.newColorMenu.add(this.redMenuItem);
-        this.newColorMenu.add(this.greenMenuItem);
-        this.newColorMenu.add(this.blueMenuItem);
-        this.newSizeMenu.add(this.size1MenuItem);
-        this.newSizeMenu.add(this.size2MenuItem);
-        this.newSizeMenu.add(this.size3MenuItem);
-
-        this.configMenu.add(this.newColorMenu);
-        this.configMenu.add(this.newSizeMenu);
-    }
-
     @Override
     protected void createComponents() {
         super.createComponents();
@@ -90,6 +72,24 @@ public class PersonFormV4 extends PersonFormV3 {
         newMenuIcon = new ImageIcon(imageIcon);
 
         this.newMenuItem.setIcon(newMenuIcon);
+    }
+
+    protected void addSubMenu() {
+        this.configMenu.remove(this.colorMenuItem);
+        this.configMenu.remove(this.sizeMenuItem);
+
+        this.newColorMenu = new JMenu("Color");
+        this.newSizeMenu = new JMenu("Size");
+
+        this.newColorMenu.add(this.redMenuItem);
+        this.newColorMenu.add(this.greenMenuItem);
+        this.newColorMenu.add(this.blueMenuItem);
+        this.newSizeMenu.add(this.size1MenuItem);
+        this.newSizeMenu.add(this.size2MenuItem);
+        this.newSizeMenu.add(this.size3MenuItem);
+
+        this.configMenu.add(this.newColorMenu);
+        this.configMenu.add(this.newSizeMenu);
     }
 
     protected void addMenus() {
