@@ -46,7 +46,7 @@ public class PersonFormV3 extends PersonFormV2 {
     }
 
     // A method for adding menus to the window.
-    protected void addMenu() {
+    protected void addMenus() {
         // Add MenuItems to Menu
         this.fileMenu.add(this.newMenuItem);
         this.fileMenu.add(this.openMenuItem);
@@ -109,7 +109,7 @@ public class PersonFormV3 extends PersonFormV2 {
         personFormV3.createComponents();
 
         // Add menu
-        personFormV3.addMenu();
+        personFormV3.addMenus();
 
         personFormV3.addComponents();
         personFormV3.setFrameFeatures();

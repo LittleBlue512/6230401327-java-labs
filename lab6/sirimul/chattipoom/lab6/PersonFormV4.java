@@ -4,7 +4,7 @@
  * Author: Chattipoom Sirimul
  * ID: 623040132-7
  * Section: 1
- * Date: January 31, 2020
+ * Date: February 3, 2020
  */
 
 package sirimul.chattipoom.lab6;
@@ -26,6 +26,9 @@ public class PersonFormV4 extends PersonFormV3 {
     protected static ImageIcon newMenuIcon;
 
     // ---------- Components ----------
+    protected JMenu newColorMenu;
+    protected JMenu newSizeMenu;
+
     protected JMenuItem redMenuItem;
     protected JMenuItem greenMenuItem;
     protected JMenuItem blueMenuItem;
@@ -42,24 +45,30 @@ public class PersonFormV4 extends PersonFormV3 {
         super(_frameTitle);
     }
 
-    @Override
-    protected void addMenu() {
-        this.colorMenuItem = new JMenu("Color");
-        this.sizeMenuItem = new JMenu("Size");
+    protected void addSubMenu() {
+        this.configMenu.remove(this.colorMenuItem);
+        this.configMenu.remove(this.sizeMenuItem);
 
-        this.colorMenuItem.add(this.redMenuItem);
-        this.colorMenuItem.add(this.greenMenuItem);
-        this.colorMenuItem.add(this.blueMenuItem);
-        this.sizeMenuItem.add(this.size1MenuItem);
-        this.sizeMenuItem.add(this.size2MenuItem);
-        this.sizeMenuItem.add(this.size3MenuItem);
+        this.newColorMenu = new JMenu("Color");
+        this.newSizeMenu = new JMenu("Size");
 
-        super.addMenu();
+        this.newColorMenu.add(this.redMenuItem);
+        this.newColorMenu.add(this.greenMenuItem);
+        this.newColorMenu.add(this.blueMenuItem);
+        this.newSizeMenu.add(this.size1MenuItem);
+        this.newSizeMenu.add(this.size2MenuItem);
+        this.newSizeMenu.add(this.size3MenuItem);
+
+        this.configMenu.add(this.newColorMenu);
+        this.configMenu.add(this.newSizeMenu);
     }
 
     @Override
     protected void createComponents() {
         super.createComponents();
+
+        this.newColorMenu = new JMenu("COlor");
+        this.newSizeMenu = new JMenu("Size");
 
         this.redMenuItem = new JMenuItem("Red");
         this.greenMenuItem = new JMenuItem("Green");
@@ -67,7 +76,14 @@ public class PersonFormV4 extends PersonFormV3 {
         this.size1MenuItem = new JMenuItem("16");
         this.size2MenuItem = new JMenuItem("20");
         this.size3MenuItem = new JMenuItem("24");
+    }
 
+    @Override
+    protected void addComponents() {
+        super.addComponents();
+    }
+
+    protected void UpdateMenuIcon() {
         newMenuIcon = new ImageIcon(getClass().getResource("images/newIcon.png"));
         Image imageIcon = newMenuIcon.getImage();
         imageIcon = imageIcon.getScaledInstance(24, 24, Image.SCALE_SMOOTH);
@@ -76,9 +92,10 @@ public class PersonFormV4 extends PersonFormV3 {
         this.newMenuItem.setIcon(newMenuIcon);
     }
 
-    @Override
-    protected void addComponents() {
-        super.addComponents();
+    protected void addMenus() {
+        super.addMenus();
+        UpdateMenuIcon();
+        addSubMenu();
     }
 
     public static void createAndShowGUI() {
@@ -88,7 +105,7 @@ public class PersonFormV4 extends PersonFormV3 {
         personFormV4.createComponents();
 
         // Add menu
-        personFormV4.addMenu();
+        personFormV4.addMenus();
 
         personFormV4.addComponents();
         personFormV4.setFrameFeatures();
