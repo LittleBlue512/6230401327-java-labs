@@ -45,7 +45,7 @@ public class PersonFormV3 extends PersonFormV2 {
         super(_frameTitle);
     }
 
-    // A method for adding menus to the window. 
+    // A method for adding menus to the window.
     protected void addMenu() {
         // Add MenuItems to Menu
         this.fileMenu.add(this.newMenuItem);
@@ -99,9 +99,6 @@ public class PersonFormV3 extends PersonFormV2 {
         gbc.anchor = GridBagConstraints.EAST;
         this.formPanelV1.add(this.hobbyList, gbc);
 
-        // Add menu
-        this.addMenu();
-
         super.addComponents();
     }
 
@@ -110,6 +107,9 @@ public class PersonFormV3 extends PersonFormV2 {
 
         // Initialize components.
         personFormV3.createComponents();
+
+        // Add menu
+        personFormV3.addMenu();
 
         personFormV3.addComponents();
         personFormV3.setFrameFeatures();
