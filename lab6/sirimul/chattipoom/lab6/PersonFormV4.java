@@ -9,11 +9,12 @@
 
 package sirimul.chattipoom.lab6;
 
-import javax.swing.ImageIcon;
+import java.awt.Image;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
-import java.awt.Image;
 
 public class PersonFormV4 extends PersonFormV3 {
     // Quick fix warning: Java(536871008)
@@ -26,15 +27,8 @@ public class PersonFormV4 extends PersonFormV3 {
     protected static ImageIcon newMenuIcon;
 
     // ---------- Components ----------
-    protected JMenu newColorMenu;
-    protected JMenu newSizeMenu;
-
-    protected JMenuItem redMenuItem;
-    protected JMenuItem greenMenuItem;
-    protected JMenuItem blueMenuItem;
-    protected JMenuItem size1MenuItem;
-    protected JMenuItem size2MenuItem;
-    protected JMenuItem size3MenuItem;
+    protected JMenu newColorMenu, newSizeMenu;
+    protected JMenuItem redMenuItem, greenMenuItem, blueMenuItem, size1MenuItem, size2MenuItem, size3MenuItem;
     // ---------- --------------------
 
     public PersonFormV4() {
@@ -49,9 +43,11 @@ public class PersonFormV4 extends PersonFormV3 {
     protected void initComponent() {
         super.initComponent();
 
+        // Create new menus for "Config" menu.
         this.newColorMenu = new JMenu("Color");
         this.newSizeMenu = new JMenu("Size");
 
+        // Create MenuItems for the new menus (Color and Size).
         this.redMenuItem = new JMenuItem("Red");
         this.greenMenuItem = new JMenuItem("Green");
         this.blueMenuItem = new JMenuItem("Blue");
@@ -66,18 +62,24 @@ public class PersonFormV4 extends PersonFormV3 {
     }
 
     protected void UpdateMenuIcon() {
-        newMenuIcon = new ImageIcon(getClass().getResource("images/newIcon.png"));
+        // Get ImageIcon.
+        newMenuIcon = new ImageIcon(getClass().getResource("./images/newIcon.png"));
+        // Get Image from ImageIcon.
         Image imageIcon = newMenuIcon.getImage();
+        // Scale the Image down.
         imageIcon = imageIcon.getScaledInstance(24, 24, Image.SCALE_SMOOTH);
+        // Set new Image for ImageIcon.
         newMenuIcon = new ImageIcon(imageIcon);
-
+        // Set Icon for "New" MenuItem.
         this.newMenuItem.setIcon(newMenuIcon);
     }
 
     protected void addSubMenu() {
+        // Remove "Color" and "Size" from "Config" menu.
         this.configMenu.remove(this.colorMenuItem);
         this.configMenu.remove(this.sizeMenuItem);
 
+        // Add MenuItem to the new menus.
         this.newColorMenu.add(this.redMenuItem);
         this.newColorMenu.add(this.greenMenuItem);
         this.newColorMenu.add(this.blueMenuItem);
@@ -85,6 +87,7 @@ public class PersonFormV4 extends PersonFormV3 {
         this.newSizeMenu.add(this.size2MenuItem);
         this.newSizeMenu.add(this.size3MenuItem);
 
+        // Add new menus to "Config" menu.
         this.configMenu.add(this.newColorMenu);
         this.configMenu.add(this.newSizeMenu);
     }

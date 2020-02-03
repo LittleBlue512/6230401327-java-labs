@@ -25,10 +25,6 @@ public class PersonFormV5 extends PersonFormV4 {
     protected Font serifPlain14 = new Font(Font.SERIF, Font.PLAIN, 14);
     protected Font serifBold14 = new Font(Font.SERIF, Font.BOLD, 14);
 
-    // ---------- Components ----------
-
-    // ---------- --------------------
-
     public PersonFormV5() {
         super(defaultFrameTitle);
     }
@@ -37,6 +33,7 @@ public class PersonFormV5 extends PersonFormV4 {
         super(_frameTitle);
     }
 
+    // Just set fonts ~
     protected void setFonts() {
         this.nameLabel.setFont(serifPlain14);
         this.heightLabel.setFont(serifPlain14);
@@ -61,21 +58,27 @@ public class PersonFormV5 extends PersonFormV4 {
         this.noteTextArea.setFont(serifBold14);
     }
 
+    // Just set colors ~
     protected void setColors() {
         this.okButton.setForeground(Color.BLUE);
         this.cancelButton.setForeground(Color.RED);
     }
 
+    // Just set defualt values ~
     protected void setValues() {
+        // Set values for TextFields.
         this.nameTextField.setText("Manee");
         this.heightTextField.setText("160");
         this.weightTextField.setText("55");
         this.dobTextField.setText("02-02-2000");
 
+        // Select "Student" radio button.
         this.studentRadioBtn.setSelected(true);
 
+        // Select the "second" element of the sports ComboBox. (0-based indexing)
         this.sportComboBox.setSelectedIndex(1);
 
+        // Select the "first" and "fourth" elements of the hobby list. (0-based indexing)
         this.hobbyList.setSelectedIndices(new int[] { 0, 3 });
     }
 
