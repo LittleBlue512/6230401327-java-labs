@@ -26,6 +26,7 @@ public class PersonFormV2 extends PersonFormV1 {
 
     // Constant variables.
     private static final String defaultFrameTitle = "PersonFormV2 Title";
+    private static final String noteText = "21st Century skills include Critical thinking, Creativity, Collaboration, Communication, etc.";
 
     // Class's variables
     private static String[] sports = { "Running", "Swimimg", "Tennis" };
@@ -55,7 +56,7 @@ public class PersonFormV2 extends PersonFormV1 {
         this.sportLabel = new JLabel("Sports:");
         this.noteLabel = new JLabel("Note:");
         this.notePanel = new JPanel(new GridBagLayout());
-        this.noteTextArea = new JTextArea(2, 35);
+        this.noteTextArea = new JTextArea(noteText, 2, 35);
         this.noteScrollPane = new JScrollPane(this.noteTextArea);
 
         this.noteTextArea.setLineWrap(true);
