@@ -66,7 +66,7 @@ public class PersonFormV5 extends PersonFormV4 {
 
     // Just set defualt values ~
     protected void setValues() {
-        // Set values for TextFields.
+        // Set values of TextFields.
         this.nameTextField.setText("Manee");
         this.heightTextField.setText("160");
         this.weightTextField.setText("55");
