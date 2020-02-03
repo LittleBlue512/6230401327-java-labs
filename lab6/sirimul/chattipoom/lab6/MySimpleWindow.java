@@ -51,7 +51,7 @@ public class MySimpleWindow extends JFrame {
     }
 
     // A method for initializing components
-    protected void createComponents() {
+    protected void initComponent() {
         // Create panels.
         this.mainPanel = new JPanel(new BorderLayout());
         this.buttonPanel = new JPanel();
@@ -71,8 +71,8 @@ public class MySimpleWindow extends JFrame {
 
     protected void addComponents() {
         // Add buttons to buttonPanel.
-        buttonPanel.add(this.okButton);
         buttonPanel.add(this.cancelButton);
+        buttonPanel.add(this.okButton);
 
         // Add buttonPanel to endPanel.
         this.endPanel.add(this.buttonPanel);
@@ -102,7 +102,7 @@ public class MySimpleWindow extends JFrame {
         final MySimpleWindow msw = new MySimpleWindow("My Simple Window");
 
         // Initialize components
-        msw.createComponents();
+        msw.initComponent();
 
         msw.addComponents();
         msw.setFrameFeatures();

@@ -46,10 +46,10 @@ public class PersonFormV4 extends PersonFormV3 {
     }
 
     @Override
-    protected void createComponents() {
-        super.createComponents();
+    protected void initComponent() {
+        super.initComponent();
 
-        this.newColorMenu = new JMenu("COlor");
+        this.newColorMenu = new JMenu("Color");
         this.newSizeMenu = new JMenu("Size");
 
         this.redMenuItem = new JMenuItem("Red");
@@ -78,9 +78,6 @@ public class PersonFormV4 extends PersonFormV3 {
         this.configMenu.remove(this.colorMenuItem);
         this.configMenu.remove(this.sizeMenuItem);
 
-        this.newColorMenu = new JMenu("Color");
-        this.newSizeMenu = new JMenu("Size");
-
         this.newColorMenu.add(this.redMenuItem);
         this.newColorMenu.add(this.greenMenuItem);
         this.newColorMenu.add(this.blueMenuItem);
@@ -102,7 +99,7 @@ public class PersonFormV4 extends PersonFormV3 {
         PersonFormV4 personFormV4 = new PersonFormV4("Person form V4");
 
         // Initialize components.
-        personFormV4.createComponents();
+        personFormV4.initComponent();
 
         // Add menu
         personFormV4.addMenus();

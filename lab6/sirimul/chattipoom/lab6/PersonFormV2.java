@@ -49,8 +49,8 @@ public class PersonFormV2 extends PersonFormV1 {
     }
 
     @Override
-    protected void createComponents() {
-        super.createComponents();
+    protected void initComponent() {
+        super.initComponent();
 
         this.sportComboBox = new JComboBox<String>(sports);
         this.sportLabel = new JLabel("Sports:");
@@ -101,7 +101,7 @@ public class PersonFormV2 extends PersonFormV1 {
         PersonFormV2 personFormV2 = new PersonFormV2("Person form V2");
 
         // Initialize components.
-        personFormV2.createComponents();
+        personFormV2.initComponent();
 
         personFormV2.addComponents();
         personFormV2.setFrameFeatures();

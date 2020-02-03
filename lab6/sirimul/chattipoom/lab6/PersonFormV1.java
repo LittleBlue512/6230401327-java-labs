@@ -60,9 +60,9 @@ public class PersonFormV1 extends MySimpleWindow {
     }
 
     @Override
-    protected void createComponents() {
+    protected void initComponent() {
         // Call the super's method.
-        super.createComponents();
+        super.initComponent();
 
         // Create labels.
         this.nameLabel = new JLabel("Name:");
@@ -160,7 +160,7 @@ public class PersonFormV1 extends MySimpleWindow {
         PersonFormV1 personFormV1 = new PersonFormV1("Person form V1");
 
         // Initialize components.
-        personFormV1.createComponents();
+        personFormV1.initComponent();
 
         personFormV1.addComponents();
         personFormV1.setFrameFeatures();

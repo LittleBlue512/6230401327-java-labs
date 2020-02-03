@@ -64,8 +64,8 @@ public class PersonFormV3 extends PersonFormV2 {
     }
 
     @Override
-    protected void createComponents() {
-        super.createComponents();
+    protected void initComponent() {
+        super.initComponent();
 
         this.hobbyList = new JList<String>(hobbies);
         this.hobbyLabel = new JLabel("Hobbies:");
@@ -106,7 +106,7 @@ public class PersonFormV3 extends PersonFormV2 {
         PersonFormV3 personFormV3 = new PersonFormV3("Person form V3");
 
         // Initialize components.
-        personFormV3.createComponents();
+        personFormV3.initComponent();
 
         // Add menu
         personFormV3.addMenus();
