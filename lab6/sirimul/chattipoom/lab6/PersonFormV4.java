@@ -63,7 +63,7 @@ public class PersonFormV4 extends PersonFormV3 {
 
     protected void UpdateMenuIcon() {
         // Get ImageIcon.
-        newMenuIcon = new ImageIcon(getClass().getResource("./images/newIcon.png"));
+        newMenuIcon = new ImageIcon(getClass().getResource("images/newIcon.png"));
         // Get Image from ImageIcon.
         Image imageIcon = newMenuIcon.getImage();
         // Scale the Image down.
