@@ -51,7 +51,6 @@ public class CanvasDrawerV1 extends JPanel {
         // Outter rectagle. (Right)
         g2D.draw(new Rectangle2D.Double(width - 150, 80, 150, 340));
 
-        // Temporary ~
         Ellipse2D.Double ellipse2D;
 
         // Filled circle. (Left)
