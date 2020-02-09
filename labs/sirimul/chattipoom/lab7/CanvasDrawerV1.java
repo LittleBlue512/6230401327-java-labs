@@ -1,3 +1,12 @@
+/**
+ * This class is to draw several shapes according to lab7 instructions.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 9, 2020
+ */
+
 package sirimul.chattipoom.lab7;
 
 import java.awt.Color;

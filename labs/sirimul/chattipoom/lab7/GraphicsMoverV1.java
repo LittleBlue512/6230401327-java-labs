@@ -1,3 +1,12 @@
+/**
+ * This program is to show GUIs according to lab7 instructions.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 9, 2020
+ */
+
 package sirimul.chattipoom.lab7;
 
 import sirimul.chattipoom.lab6.*;
@@ -36,6 +45,7 @@ public class GraphicsMoverV1 extends MySimpleWindow {
         this.resetButton = new JButton("Reset");
 
         this.mainPanel.setLayout(new BoxLayout(this.mainPanel, BoxLayout.Y_AXIS));
+        // Add horizontal and vertical padding to the components in buttomPanel.
         this.buttomPanel.setLayout(new FlowLayout(FlowLayout.CENTER, H_PADDING, V_PADDING));
     }
 
