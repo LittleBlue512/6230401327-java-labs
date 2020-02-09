@@ -67,8 +67,8 @@ public class CanvasDrawerV1 extends JPanel {
         g2D.setColor(Color.WHITE);
 
         // Center circle.
-        ellipse2D = new Ellipse2D.Double((width - CIRCLE_RADIUS * 2) / 2, (height - CIRCLE_RADIUS * 2) / 2,
-                CIRCLE_RADIUS * 2, CIRCLE_RADIUS * 2);
+        ellipse2D = new Ellipse2D.Double(width / 2 - CIRCLE_RADIUS, height / 2 - CIRCLE_RADIUS, CIRCLE_RADIUS * 2,
+                CIRCLE_RADIUS * 2);
         g2D.draw(ellipse2D);
     }
 }
