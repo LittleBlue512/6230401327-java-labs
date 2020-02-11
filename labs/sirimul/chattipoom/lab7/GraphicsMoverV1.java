@@ -12,6 +12,7 @@ package sirimul.chattipoom.lab7;
 import sirimul.chattipoom.lab6.*;
 
 import java.awt.FlowLayout;
+import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -22,43 +23,64 @@ public class GraphicsMoverV1 extends MySimpleWindow {
     private static final long serialVersionUID = 1L;
 
     // Constant variables.
-    private static final int V_PADDING = 5, H_PADDING = 20;
+    protected static final int V_PADDING = 5, H_PADDING = 20;
 
     // Components
-    protected CanvasDrawerV1 topPanel;
-    protected JPanel buttomPanel;
+    protected CanvasDrawerV1 canvasDrawerV1;
+    protected JPanel buttonPanel, topPanel, centerPanel, bottomPanel;
     protected JButton moveUp, moveDown, moveLeft, moveRight, resetButton;
 
     public GraphicsMoverV1(String _frameTitle) {
         super(_frameTitle);
     }
 
+    private void setComponentLayout() {
+        // Use BorderLayout in mainPanel.
+        this.mainPanel.setLayout(new BorderLayout());
+
+        // Set top, center, bottom panel's layout to BoxLayout.
+        this.topPanel.setLayout(new BoxLayout(this.topPanel, BoxLayout.Y_AXIS));
+        this.centerPanel.setLayout(new BoxLayout(this.centerPanel, BoxLayout.Y_AXIS));
+        this.bottomPanel.setLayout(new BoxLayout(this.bottomPanel, BoxLayout.Y_AXIS));
+
+        // Add horizontal and vertical padding to the components in bottomPanel.
+        this.buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, H_PADDING, V_PADDING));
+    }
+
     @Override
     protected void initComponent() {
-        this.topPanel = new CanvasDrawerV1();
+        this.canvasDrawerV1 = new CanvasDrawerV1();
         this.mainPanel = new JPanel();
-        this.buttomPanel = new JPanel();
+        this.buttonPanel = new JPanel();
+        this.topPanel = new JPanel();
+        this.centerPanel = new JPanel();
+        this.bottomPanel = new JPanel();
         this.moveUp = new JButton("Move Up");
         this.moveDown = new JButton("Move Down");
         this.moveLeft = new JButton("Move Left");
         this.moveRight = new JButton("Move Right");
         this.resetButton = new JButton("Reset");
 
-        this.mainPanel.setLayout(new BoxLayout(this.mainPanel, BoxLayout.Y_AXIS));
-        // Add horizontal and vertical padding to the components in buttomPanel.
-        this.buttomPanel.setLayout(new FlowLayout(FlowLayout.CENTER, H_PADDING, V_PADDING));
+        this.setComponentLayout();
     }
 
     @Override
     protected void addComponents() {
-        this.buttomPanel.add(this.moveUp);
-        this.buttomPanel.add(this.moveDown);
-        this.buttomPanel.add(this.moveLeft);
-        this.buttomPanel.add(this.moveRight);
-        this.buttomPanel.add(this.resetButton);
+        // Add buttons to buttonPanel.
+        this.buttonPanel.add(this.moveUp);
+        this.buttonPanel.add(this.moveDown);
+        this.buttonPanel.add(this.moveLeft);
+        this.buttonPanel.add(this.moveRight);
+        this.buttonPanel.add(this.resetButton);
 
-        this.mainPanel.add(this.topPanel);
-        this.mainPanel.add(this.buttomPanel);
+        // Add canvasDrawerV1 to centerPanel. Add buttonPanel to bottomPanel.
+        this.centerPanel.add(this.canvasDrawerV1);
+        this.bottomPanel.add(this.buttonPanel);
+
+        // Add top, center, and bottom Panel to their position in the mainPanel.
+        this.mainPanel.add(this.topPanel, BorderLayout.PAGE_START);
+        this.mainPanel.add(this.centerPanel, BorderLayout.CENTER);
+        this.mainPanel.add(this.bottomPanel, BorderLayout.PAGE_END);
 
         this.add(this.mainPanel);
     }
