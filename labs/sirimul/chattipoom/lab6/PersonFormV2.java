@@ -25,8 +25,8 @@ public class PersonFormV2 extends PersonFormV1 {
     private static final long serialVersionUID = 1L;
 
     // Constant variables.
-    private static final String defaultFrameTitle = "PersonFormV2 Title";
-    private static final String noteText = "21st Century skills include Critical thinking, Creativity, Collaboration, Communication, etc.";
+    private static final String DEFAULT_FRAME_TITLE = "PersonFormV2 Title";
+    private static final String NOTE_TEXT = "21st Century skills include Critical thinking, Creativity, Collaboration, Communication, etc.";
 
     // Class's variables
     private static String[] sports = { "Running", "Swimimg", "Tennis" };
@@ -40,7 +40,7 @@ public class PersonFormV2 extends PersonFormV1 {
     // ---------- ---------- ----------
 
     public PersonFormV2() {
-        super(defaultFrameTitle);
+        super(DEFAULT_FRAME_TITLE);
     }
 
     public PersonFormV2(String _frameTitle) {
@@ -55,7 +55,7 @@ public class PersonFormV2 extends PersonFormV1 {
         this.sportLabel = new JLabel("Sports:");
         this.noteLabel = new JLabel("Note:");
         this.notePanel = new JPanel(new GridBagLayout());
-        this.noteTextArea = new JTextArea(noteText, 2, 35);
+        this.noteTextArea = new JTextArea(NOTE_TEXT, 2, 35);
         this.noteScrollPane = new JScrollPane(this.noteTextArea);
 
         this.noteTextArea.setLineWrap(true);

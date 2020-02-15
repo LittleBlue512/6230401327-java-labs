@@ -19,14 +19,14 @@ public class PersonFormV5 extends PersonFormV4 {
     private static final long serialVersionUID = 1L;
 
     // Constant variables.
-    private static final String defaultFrameTitle = "PersonFormV5 Title";
+    private static final String DEFAULT_FRAME_TITLE = "PersonFormV5 Title";
 
     // Class's variables
     protected Font serifPlain14 = new Font(Font.SERIF, Font.PLAIN, 14);
     protected Font serifBold14 = new Font(Font.SERIF, Font.BOLD, 14);
 
     public PersonFormV5() {
-        super(defaultFrameTitle);
+        super(DEFAULT_FRAME_TITLE);
     }
 
     public PersonFormV5(String _frameTitle) {
@@ -78,7 +78,8 @@ public class PersonFormV5 extends PersonFormV4 {
         // Select the "second" element of the sports ComboBox. (0-based indexing)
         this.sportComboBox.setSelectedIndex(1);
 
-        // Select the "first" and "fourth" elements of the hobbies list. (0-based indexing)
+        // Select the "first" and "fourth" elements of the hobbies list. (0-based
+        // indexing)
         this.hobbyList.setSelectedIndices(new int[] { 0, 3 });
     }
 

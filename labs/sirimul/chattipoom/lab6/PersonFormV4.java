@@ -21,7 +21,7 @@ public class PersonFormV4 extends PersonFormV3 {
     private static final long serialVersionUID = 1L;
 
     // Constant variables.
-    private static final String defaultFrameTitle = "PersonFormV4 Title";
+    private static final String DEFAULT_FRAME_TITLE = "PersonFormV4 Title";
 
     // Class's variables
     protected static ImageIcon newMenuIcon;
@@ -32,7 +32,7 @@ public class PersonFormV4 extends PersonFormV3 {
     // ---------- --------------------
 
     public PersonFormV4() {
-        super(defaultFrameTitle);
+        super(DEFAULT_FRAME_TITLE);
     }
 
     public PersonFormV4(String _frameTitle) {

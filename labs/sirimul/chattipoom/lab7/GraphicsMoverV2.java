@@ -23,9 +23,9 @@ public class GraphicsMoverV2 extends GraphicsMoverV1 {
     private static final long serialVersionUID = 1L;
 
     // Constant variables.
-    protected Font serifBold20 = new Font(Font.SERIF, Font.BOLD, 20);
-    private static final String blueTeamName = "Khonkaen";
-    private static final String redTeamName = "Udon Thai";
+    protected static final Font SERIF_BOLD_20 = new Font(Font.SERIF, Font.BOLD, 20);
+    private static final String BLUE_TEAM_NAME = "Khonkaen";
+    private static final String RED_TEAM_NAME = "Udon Thai";
 
     // Components
     protected JPanel scorePanel;
@@ -42,10 +42,10 @@ public class GraphicsMoverV2 extends GraphicsMoverV1 {
     }
 
     private void setFonts() {
-        this.blueLabel.setFont(serifBold20);
-        this.redLabel.setFont(serifBold20);
-        this.blueScore.setFont(serifBold20);
-        this.redScore.setFont(serifBold20);
+        this.blueLabel.setFont(SERIF_BOLD_20);
+        this.redLabel.setFont(SERIF_BOLD_20);
+        this.blueScore.setFont(SERIF_BOLD_20);
+        this.redScore.setFont(SERIF_BOLD_20);
     }
 
     private void setComponentLayout() {
@@ -57,8 +57,8 @@ public class GraphicsMoverV2 extends GraphicsMoverV1 {
         super.initComponent();
 
         this.scorePanel = new JPanel();
-        this.blueLabel = new JLabel(blueTeamName);
-        this.redLabel = new JLabel(redTeamName);
+        this.blueLabel = new JLabel(BLUE_TEAM_NAME);
+        this.redLabel = new JLabel(RED_TEAM_NAME);
         this.blueScore = new JTextField("3");
         this.redScore = new JTextField("1");
 

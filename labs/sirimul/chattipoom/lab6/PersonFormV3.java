@@ -24,7 +24,7 @@ public class PersonFormV3 extends PersonFormV2 {
     private static final long serialVersionUID = 1L;
 
     // Constant variables.
-    private static final String defaultFrameTitle = "PersonFormV3 Title";
+    private static final String DEFAULT_FRAME_TITLE = "PersonFormV3 Title";
 
     // Class's variables
     protected static String[] hobbies = { "Reading", "Traveling", "Cooking", "Photography" };
@@ -38,7 +38,7 @@ public class PersonFormV3 extends PersonFormV2 {
     // ---------- ---------- ----------
 
     public PersonFormV3() {
-        super(defaultFrameTitle);
+        super(DEFAULT_FRAME_TITLE);
     }
 
     public PersonFormV3(String _frameTitle) {

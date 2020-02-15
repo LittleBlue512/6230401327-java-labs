@@ -85,12 +85,6 @@ public class GraphicsMoverV1 extends MySimpleWindow {
         this.add(this.mainPanel);
     }
 
-    @Override
-    protected void setFrameFeatures() {
-        this.setContentPane(this.mainPanel);
-        super.setFrameFeatures();
-    }
-
     public static void createAndShowGUI() {
         final GraphicsMoverV1 graphicsMoverV1 = new GraphicsMoverV1("Graphics Mover Version 1");
 

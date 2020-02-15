@@ -24,9 +24,7 @@ public class MySimpleWindow extends JFrame {
     private static final long serialVersionUID = -5235778330626143850L;
 
     // Constant variables.
-    private static final String defaultFrameTitle = "MySimpleWindow Title";
-    private static final String cancelButtonString = "Cancel";
-    private static final String okButtonString = "Ok";
+    private static final String DEFAULT_FRAME_TITLE = "MySimpleWindow Title";
 
     // ---------- Components ----------
     protected JPanel mainPanel;
@@ -42,7 +40,7 @@ public class MySimpleWindow extends JFrame {
 
     // A default constructor.
     public MySimpleWindow() {
-        super(defaultFrameTitle);
+        super(DEFAULT_FRAME_TITLE);
     }
 
     // A constructor with one parameter: frame's title.
@@ -57,7 +55,8 @@ public class MySimpleWindow extends JFrame {
         this.buttonPanel = new JPanel();
 
         // Create sub-panels for mainPanel: start, center, end
-        // *** I use "BoxLayout" because I can add components to the panel without displacing the old one.
+        // *** I use "BoxLayout" because I can add components to the panel without
+        // displacing the old one.
         // BoxLayout.Y_AXIS allows us to align components on the Y-axis.
         this.startPanel = new JPanel();
         this.startPanel.setLayout(new BoxLayout(this.startPanel, BoxLayout.Y_AXIS));
@@ -67,8 +66,8 @@ public class MySimpleWindow extends JFrame {
         this.endPanel.setLayout(new BoxLayout(this.endPanel, BoxLayout.Y_AXIS));
 
         // Create buttons.
-        this.cancelButton = new JButton(cancelButtonString);
-        this.okButton = new JButton(okButtonString);
+        this.cancelButton = new JButton("Cancel");
+        this.okButton = new JButton("OK");
     }
 
     protected void addComponents() {

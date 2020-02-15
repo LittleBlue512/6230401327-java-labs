@@ -25,8 +25,8 @@ public class PersonFormV1 extends MySimpleWindow {
     private static final long serialVersionUID = 1L;
 
     // Constant variables.
-    private static final String defaultFrameTitle = "PersonFormV1 Title";
-    private static final int textFieldLength = 15;
+    private static final String DEFAULT_FRAME_TITLE = "PersonFormV1 Title";
+    private static final int TEXT_FIELD_LENGTH = 15;
 
     // ---------- Components ----------
     protected JLabel nameLabel, heightLabel, weightLabel, dobLabel, typeLabel;
@@ -38,7 +38,7 @@ public class PersonFormV1 extends MySimpleWindow {
 
     // A default constructor.
     public PersonFormV1() {
-        super(defaultFrameTitle);
+        super(DEFAULT_FRAME_TITLE);
     }
 
     // A constructor with one parameter: frame's title.
@@ -59,10 +59,10 @@ public class PersonFormV1 extends MySimpleWindow {
         this.typeLabel = new JLabel("Type:");
 
         // Create text fields.
-        this.nameTextField = new JTextField(textFieldLength);
-        this.heightTextField = new JTextField(textFieldLength);
-        this.weightTextField = new JTextField(textFieldLength);
-        this.dobTextField = new JTextField(textFieldLength);
+        this.nameTextField = new JTextField(TEXT_FIELD_LENGTH);
+        this.heightTextField = new JTextField(TEXT_FIELD_LENGTH);
+        this.weightTextField = new JTextField(TEXT_FIELD_LENGTH);
+        this.dobTextField = new JTextField(TEXT_FIELD_LENGTH);
 
         // Create two radio buttons.
         this.studentRadioBtn = new JRadioButton("Student");
