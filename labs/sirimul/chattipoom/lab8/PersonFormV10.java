@@ -97,9 +97,13 @@ public class PersonFormV10 extends PersonFormV9 implements ActionListener {
         this.redMenuItem.setMnemonic(KeyEvent.VK_R);
         this.greenMenuItem.setMnemonic(KeyEvent.VK_G);
         this.blueMenuItem.setMnemonic(KeyEvent.VK_B);
+        this.configMenu.setMnemonic(KeyEvent.VK_C);
+        this.newColorMenu.setMnemonic(KeyEvent.VK_L);
+        this.newSizeMenu.setMnemonic(KeyEvent.VK_Z);
         this.size16MenuItem.setMnemonic(KeyEvent.VK_1);
         this.size20MenuItem.setMnemonic(KeyEvent.VK_0);
         this.size24MenuItem.setMnemonic(KeyEvent.VK_4);
+
     }
 
     public static void createAndShowGUI() {
