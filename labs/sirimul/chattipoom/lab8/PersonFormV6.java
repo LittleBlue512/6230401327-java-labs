@@ -1,6 +1,7 @@
 package sirimul.chattipoom.lab8;
 
 import sirimul.chattipoom.lab6.PersonFormV5;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -74,6 +75,15 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
         this.cancelButton.addActionListener(this);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object obj = e.getSource();
+        if (obj == this.okButton)
+            createMessageDialog();
+        else if (obj == this.cancelButton)
+            clearValues();
+    }
+
     public static void createAndShowGUI() {
         PersonFormV6 PersonFormV6 = new PersonFormV6("Person form V6");
 
@@ -90,15 +100,5 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
                 createAndShowGUI();
             }
         });
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Object obj = e.getSource();
-        System.out.println("AASDASD");
-        if (obj == this.okButton)
-            createMessageDialog();
-        else if (obj == this.cancelButton)
-            clearValues();
     }
 }
