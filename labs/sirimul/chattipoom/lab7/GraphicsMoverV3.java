@@ -2,7 +2,10 @@
  * This class is to draw several shapes according to lab7 instructions. This
  * class is extended from GraphicsMoverV2.
  * 
- * Author: Chattipoom Sirimul ID: 623040132-7 Section: 1 Date: February 11, 2020
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 11, 2020
  */
 
 package sirimul.chattipoom.lab7;

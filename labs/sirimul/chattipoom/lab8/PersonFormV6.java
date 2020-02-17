@@ -1,3 +1,13 @@
+/**
+ * This class is to implement ActionListener by showing a dialog window when the ok button is pressed.
+ * And close the window when the cancel button is pressed.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 17, 2020
+ */
+
 package sirimul.chattipoom.lab8;
 
 import sirimul.chattipoom.lab6.PersonFormV5;
@@ -23,7 +33,7 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
         super(_frameTitle);
     }
 
-    protected void createMessageDialog() {
+    protected void createDialogFormV6() {
         String message = "";
 
         String name = "Name : " + this.nameTextField.getText();
@@ -70,7 +80,7 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
         super.initComponent();
     }
 
-    protected void addListener() {
+    protected void addListeners() {
         this.okButton.addActionListener(this);
         this.cancelButton.addActionListener(this);
     }
@@ -79,7 +89,7 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
         if (obj == this.okButton)
-            createMessageDialog();
+            createDialogFormV6();
         else if (obj == this.cancelButton)
             clearValues();
     }
@@ -89,7 +99,7 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
 
         PersonFormV6.initComponent();
         PersonFormV6.addMenus();
-        PersonFormV6.addListener();
+        PersonFormV6.addListeners();
         PersonFormV6.addComponents();
         PersonFormV6.setFrameFeatures();
     }
