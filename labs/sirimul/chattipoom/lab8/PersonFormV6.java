@@ -57,8 +57,8 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
 
         // Get multiple selected values from JList.
         String hobbies = "Hobbies : ";
-        int[] hobbiesIndeces = this.hobbyList.getSelectedIndices();
-        for (int index : hobbiesIndeces)
+        int[] hobbiesIndices = this.hobbyList.getSelectedIndices();
+        for (int index : hobbiesIndices)
             hobbies += PersonFormV6.hobbies[index] + " ";
 
         String note = "Note : " + this.noteTextArea.getText();

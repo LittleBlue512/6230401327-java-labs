@@ -28,7 +28,7 @@ public class PersonFormV4 extends PersonFormV3 {
 
     // ---------- Components ----------
     protected JMenu newColorMenu, newSizeMenu;
-    protected JMenuItem redMenuItem, greenMenuItem, blueMenuItem, size1MenuItem, size2MenuItem, size3MenuItem;
+    protected JMenuItem redMenuItem, greenMenuItem, blueMenuItem, size16MenuItem, size20MenuItem, size24MenuItem;
     // ---------- --------------------
 
     public PersonFormV4() {
@@ -51,9 +51,9 @@ public class PersonFormV4 extends PersonFormV3 {
         this.redMenuItem = new JMenuItem("Red");
         this.greenMenuItem = new JMenuItem("Green");
         this.blueMenuItem = new JMenuItem("Blue");
-        this.size1MenuItem = new JMenuItem("16");
-        this.size2MenuItem = new JMenuItem("20");
-        this.size3MenuItem = new JMenuItem("24");
+        this.size16MenuItem = new JMenuItem("16");
+        this.size20MenuItem = new JMenuItem("20");
+        this.size24MenuItem = new JMenuItem("24");
     }
 
     @Override
@@ -83,9 +83,9 @@ public class PersonFormV4 extends PersonFormV3 {
         this.newColorMenu.add(this.redMenuItem);
         this.newColorMenu.add(this.greenMenuItem);
         this.newColorMenu.add(this.blueMenuItem);
-        this.newSizeMenu.add(this.size1MenuItem);
-        this.newSizeMenu.add(this.size2MenuItem);
-        this.newSizeMenu.add(this.size3MenuItem);
+        this.newSizeMenu.add(this.size16MenuItem);
+        this.newSizeMenu.add(this.size20MenuItem);
+        this.newSizeMenu.add(this.size24MenuItem);
 
         // Add new menus to "Config" menu.
         this.configMenu.add(this.newColorMenu);

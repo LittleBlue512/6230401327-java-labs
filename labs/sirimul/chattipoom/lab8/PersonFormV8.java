@@ -1,3 +1,13 @@
+/**
+ * This class is to implement ActionListener by showing a dialog window when the ComboBox is being changed.
+ * This class is also ingerited from PersonFormV7.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 17, 2020
+ */
+
 package sirimul.chattipoom.lab8;
 
 import java.awt.event.ActionEvent;
@@ -22,7 +32,6 @@ public class PersonFormV8 extends PersonFormV7 implements ActionListener {
     @Override
     protected void addListeners() {
         super.addListeners();
-
         this.sportComboBox.addActionListener(this);
     }
 
