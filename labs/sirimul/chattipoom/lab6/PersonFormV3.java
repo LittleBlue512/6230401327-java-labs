@@ -18,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.SwingUtilities;
+import javax.swing.ListSelectionModel;
 
 public class PersonFormV3 extends PersonFormV2 {
     // Quick fix warning: Java(536871008)
@@ -78,6 +79,8 @@ public class PersonFormV3 extends PersonFormV2 {
         this.exitMenuItem = new JMenuItem("Exit");
         this.colorMenuItem = new JMenuItem("Color");
         this.sizeMenuItem = new JMenuItem("Size");
+
+        this.hobbyList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     }
 
     @Override
