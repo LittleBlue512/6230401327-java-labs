@@ -30,15 +30,15 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
 
         String height = "Height (cm) : " + this.heightTextField.getText();
 
-        String weight = "Weight (kg) : " + this.weightLabel.getText();
+        String weight = "Weight (kg) : " + this.weightTextField.getText();
 
         String dob = "Date of Birth : " + this.dobTextField.getText();
 
         String type = "Type : ";
         if (this.studentRadioBtn.isSelected())
-            type = "Student";
+            type += "Student";
         else if (this.teacherRadioBtn.isSelected())
-            type = "Teacher";
+            type += "Teacher";
 
         String sport = "Sport : " + this.sportComboBox.getSelectedItem().toString();
 
@@ -56,10 +56,21 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
                 new ImageIcon(getClass().getResource("images/javaIcon.png")));
     }
 
+    protected void clearValues() {
+        this.nameTextField.setText("");
+        this.heightTextField.setText("");
+        this.weightTextField.setText("");
+        this.dobTextField.setText("");
+    }
+
     @Override
     protected void initComponent() {
         super.initComponent();
+    }
+
+    protected void addListener() {
         this.okButton.addActionListener(this);
+        this.cancelButton.addActionListener(this);
     }
 
     public static void createAndShowGUI() {
@@ -67,6 +78,7 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
 
         PersonFormV6.initComponent();
         PersonFormV6.addMenus();
+        PersonFormV6.addListener();
         PersonFormV6.addComponents();
         PersonFormV6.setFrameFeatures();
     }
@@ -81,6 +93,10 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        createMessageDialog();
+        Object obj = e.getSource();
+        if (obj == this.okButton)
+            createMessageDialog();
+        else if (obj == this.cancelButton)
+            clearValues();
     }
 }
