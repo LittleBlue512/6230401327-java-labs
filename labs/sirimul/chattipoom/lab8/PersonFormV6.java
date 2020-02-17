@@ -25,6 +25,9 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
     // Constant variables.
     private static final String DEFAULT_FRAME_TITLE = "PersonFormV6 Title";
 
+    // Class's variable.
+    public static ImageIcon icon;
+
     public PersonFormV6() {
         super(DEFAULT_FRAME_TITLE);
     }
@@ -62,8 +65,6 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
 
         message = String.join("\n", name, height, weight, dob, type, sport, hobbies, note);
 
-        ImageIcon icon = new ImageIcon(getClass().getResource("images/javaIcon.png"));
-
         JOptionPane.showMessageDialog(this, message, "Person Information", JOptionPane.INFORMATION_MESSAGE, icon);
     }
 
@@ -75,14 +76,17 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
         this.noteTextArea.setText("");
     }
 
-    @Override
-    protected void initComponent() {
-        super.initComponent();
-    }
-
     protected void addListeners() {
         this.okButton.addActionListener(this);
         this.cancelButton.addActionListener(this);
+    }
+
+    @Override
+    protected void initComponent() {
+        super.initComponent();
+
+        // Get icon.
+        icon = new ImageIcon(getClass().getResource("images/javaIcon.png"));
     }
 
     @Override
