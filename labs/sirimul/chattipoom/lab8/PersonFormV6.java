@@ -51,8 +51,9 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
 
         message = String.join("\n", name, height, weight, dob, type, sport, hobbies, note);
 
-        JOptionPane.showMessageDialog(this, message, "Person Information", JOptionPane.INFORMATION_MESSAGE,
-                new ImageIcon(getClass().getResource("images/javaIcon.png")));
+        ImageIcon icon = new ImageIcon(getClass().getResource("images/javaIcon.png"));
+
+        JOptionPane.showMessageDialog(this, message, "Person Information", JOptionPane.INFORMATION_MESSAGE, icon);
     }
 
     protected void clearValues() {
@@ -94,6 +95,7 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
+        System.out.println("AASDASD");
         if (obj == this.okButton)
             createMessageDialog();
         else if (obj == this.cancelButton)
