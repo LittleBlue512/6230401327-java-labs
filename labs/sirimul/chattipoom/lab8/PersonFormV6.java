@@ -4,7 +4,6 @@ import sirimul.chattipoom.lab6.PersonFormV5;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -61,6 +60,7 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
         this.heightTextField.setText("");
         this.weightTextField.setText("");
         this.dobTextField.setText("");
+        this.noteTextArea.setText("");
     }
 
     @Override
