@@ -1,5 +1,5 @@
 /**
- * This class is to implement ActionListener by showing a dialog window when the ComboBox is being changed.
+ * This class is to implement ItemListener by showing a dialog window when the ComboBox is being changed.
  * This class is also ingerited from PersonFormV7.
  * 
  * Author: Chattipoom Sirimul
@@ -10,13 +10,12 @@
 
 package sirimul.chattipoom.lab8;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
 
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
-public class PersonFormV8 extends PersonFormV7 implements ActionListener {
+public class PersonFormV8 extends PersonFormV7 {
     private static final long serialVersionUID = 1L;
 
     private static final String DEFAULT_FRAME_TITLE = "PersonFormV8 Title";
@@ -32,17 +31,12 @@ public class PersonFormV8 extends PersonFormV7 implements ActionListener {
     @Override
     protected void addListeners() {
         super.addListeners();
-        this.sportComboBox.addActionListener(this);
+        this.sportComboBox.addItemListener(this);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        super.actionPerformed(e);
-
-        Object obj = e.getSource();
-
-        if (obj == this.sportComboBox) {
-            // Type casting: Object -> String
+    public void itemStateChanged(ItemEvent e) {
+        if (e.getStateChange() == ItemEvent.SELECTED) {
             String sportName = (String) this.sportComboBox.getSelectedItem();
 
             // Create dialog window.

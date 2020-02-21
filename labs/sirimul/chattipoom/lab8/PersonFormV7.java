@@ -1,5 +1,5 @@
 /**
- * This class is to implement ActionListener by showing a dialog window when one of the radio buttons is pressed.
+ * This class is to implement ItemListener by showing a dialog window when one of the radio buttons is pressed.
  * This class is also ingerited from PersonFormV6.
  * 
  * Author: Chattipoom Sirimul
@@ -10,13 +10,13 @@
 
 package sirimul.chattipoom.lab8;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
-public class PersonFormV7 extends PersonFormV6 implements ActionListener {
+public class PersonFormV7 extends PersonFormV6 implements ItemListener {
     private static final long serialVersionUID = 1L;
 
     private static final String DEFAULT_FRAME_TITLE = "PersonFormV7 Title";
@@ -32,20 +32,23 @@ public class PersonFormV7 extends PersonFormV6 implements ActionListener {
     @Override
     protected void addListeners() {
         super.addListeners();
-        this.studentRadioBtn.addActionListener(this);
-        this.teacherRadioBtn.addActionListener(this);
+        this.studentRadioBtn.addItemListener(this);
+        this.teacherRadioBtn.addItemListener(this);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        super.actionPerformed(e);
-
+    public void itemStateChanged(ItemEvent e) {
         Object obj = e.getSource();
 
-        if (obj == this.studentRadioBtn)
-            createDialogFormV7("Student");
-        else if (obj == this.teacherRadioBtn)
-            createDialogFormV7("Teacher");
+        if (obj == this.studentRadioBtn) {
+            if (e.getStateChange() == ItemEvent.SELECTED) {
+                createDialogFormV7("Student");
+            }
+        } else if (obj == this.teacherRadioBtn) {
+            if (e.getStateChange() == ItemEvent.SELECTED) {
+                createDialogFormV7("Teacher");
+            }
+        }
     }
 
     protected void createDialogFormV7(String buttonName) {

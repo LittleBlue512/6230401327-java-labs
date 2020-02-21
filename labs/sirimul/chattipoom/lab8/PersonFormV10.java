@@ -14,12 +14,11 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
-public class PersonFormV10 extends PersonFormV9 implements ActionListener {
+public class PersonFormV10 extends PersonFormV9 {
     private static final long serialVersionUID = 1L;
 
     private static final String DEFAULT_FRAME_TITLE = "PersonFormV10 Title";
