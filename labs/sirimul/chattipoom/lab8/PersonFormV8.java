@@ -36,11 +36,15 @@ public class PersonFormV8 extends PersonFormV7 {
 
     @Override
     public void itemStateChanged(ItemEvent e) {
-        if (e.getStateChange() == ItemEvent.SELECTED) {
-            String sportName = (String) this.sportComboBox.getSelectedItem();
+        super.itemStateChanged(e);
+        Object obj = e.getSource();
+        if (obj == this.sportComboBox) {
+            if (e.getStateChange() == ItemEvent.SELECTED) {
+                String sportName = (String) this.sportComboBox.getSelectedItem();
 
-            // Create dialog window.
-            createDialogFormV8(sportName);
+                // Create dialog window.
+                createDialogFormV8(sportName);
+            }
         }
     }
 

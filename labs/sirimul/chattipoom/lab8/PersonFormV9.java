@@ -38,8 +38,11 @@ public class PersonFormV9 extends PersonFormV8 implements ListSelectionListener 
     public void valueChanged(ListSelectionEvent e) {
         // Check if the specified event is the final one in the chain.
         // I want "mouse up" event, not "mouse down" event.
-        if (!e.getValueIsAdjusting()) {
-            createDialogFormV9();
+        Object obj = e.getSource();
+        if (obj == this.hobbyList) {
+            if (!e.getValueIsAdjusting()) {
+                createDialogFormV9();
+            }
         }
     }
 
