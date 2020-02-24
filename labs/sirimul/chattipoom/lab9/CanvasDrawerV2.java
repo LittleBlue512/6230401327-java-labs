@@ -16,14 +16,11 @@ public class CanvasDrawerV2 extends CanvasDrawerV1 {
         super();
 
         // Create a ball.
-        int ballX = CANVAS_WIDTH / 2 - Ball.BALL_DIAMETER / 2;
-        int ballY = CANVAS_HEIGHT / 2 - Ball.BALL_DIAMETER / 2;
-        this.ball = new Ball(ballX, ballY);
+        this.ball = new Ball(CANVAS_WIDTH / 2 - Ball.BALL_DIAMETER / 2, CANVAS_HEIGHT / 2 - Ball.BALL_DIAMETER / 2);
 
         // Create keepers.
-        int keeperY = CANVAS_HEIGHT / 2 - Keeper.KEEPER_HEIGHT / 2;
-        this.keeperLeft = new Keeper(0, keeperY);
-        this.keeperRight = new Keeper(CANVAS_WIDTH - Keeper.KEEPER_WIDTH, keeperY);
+        this.keeperLeft = new Keeper(0, CANVAS_HEIGHT / 2 - Keeper.KEEPER_HEIGHT / 2);
+        this.keeperRight = new Keeper(CANVAS_WIDTH - Keeper.KEEPER_WIDTH, CANVAS_HEIGHT / 2 - Keeper.KEEPER_HEIGHT / 2);
     }
 
     @Override

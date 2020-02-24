@@ -40,11 +40,11 @@ public class GraphicsMoverV4 extends GraphicsMoverV3 {
     }
 
     public static void createAndShowGUI() {
-        final GraphicsMoverV4 GraphicsMoverV4 = new GraphicsMoverV4("Graphics Mover Version 4");
+        final GraphicsMoverV4 graphicsMoverV4 = new GraphicsMoverV4("Graphics Mover Version 4");
 
-        GraphicsMoverV4.initComponent();
-        GraphicsMoverV4.addComponents();
-        GraphicsMoverV4.setFrameFeatures();
+        graphicsMoverV4.initComponent();
+        graphicsMoverV4.addComponents();
+        graphicsMoverV4.setFrameFeatures();
     }
 
     public static void main(final String[] args) {
