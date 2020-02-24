@@ -31,7 +31,7 @@ public class FootballGameV1 extends GraphicsMoverV4 {
     }
 
     public static void createAndShowGUI() {
-        final FootballGameV1 footballGameV1 = new FootballGameV1("Graphics Mover Version 4");
+        final FootballGameV1 footballGameV1 = new FootballGameV1("Football Game V1");
 
         footballGameV1.initComponent();
         footballGameV1.addComponents();

@@ -21,9 +21,6 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
         int xv = randX;
         int yv = randY;
 
-        System.out.println(xv);
-        System.out.println(yv);
-
         this.ball.setXVelocoty(xv);
         this.ball.setYVelocity(yv);
 
@@ -41,7 +38,7 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
                     // Set ball's new x velocity.
                     this.ball.setXVelocoty(xVelocity * -1);
                 } else {
-                    // GOAL !!!
+                    
                 }
 
             } else if (isHitVertical()) {
@@ -71,14 +68,14 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
     }
 
     protected boolean isHitHorizontal() {
-        if (this.ball.x <= 0 || this.ball.x + Ball.BALL_DIAMETER / 2 >= CANVAS_WIDTH)
+        if (this.ball.x <= 0 || this.ball.x + Ball.BALL_DIAMETER >= CANVAS_WIDTH)
             return true;
         return false;
 
     }
 
     protected boolean isHitVertical() {
-        if (this.ball.y <= 0 || this.ball.y + Ball.BALL_DIAMETER / 2 >= CANVAS_HEIGHT)
+        if (this.ball.y <= 0 || this.ball.y + Ball.BALL_DIAMETER >= CANVAS_HEIGHT)
             return true;
         return false;
     }
