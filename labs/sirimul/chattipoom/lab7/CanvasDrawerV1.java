@@ -22,10 +22,10 @@ public class CanvasDrawerV1 extends JPanel {
     private static final long serialVersionUID = 1L;
 
     // Constant variables.
-    private static final int CANVAS_WIDTH = 800, CANVAS_HEIGHT = 500;
-    private static final float LINE_WIDTH = 4f;
-    private static final double DOT_CIRCLE_RADIUS = 5f, CIRCLE_RADIUS = 50f;
-    private static final Color CANVAS_BACKGROUND = Color.GREEN;
+    protected static final int CANVAS_WIDTH = 800, CANVAS_HEIGHT = 500;
+    protected static final float LINE_WIDTH = 4f;
+    protected static final double DOT_CIRCLE_RADIUS = 5f, CIRCLE_RADIUS = 50f;
+    protected static final Color CANVAS_BACKGROUND = Color.GREEN;
 
     public CanvasDrawerV1() {
         super();
