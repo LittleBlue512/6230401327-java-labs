@@ -1,6 +1,5 @@
 package sirimul.chattipoom.lab9;
 
-import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
 import sirimul.chattipoom.lab7.*;
@@ -19,10 +18,10 @@ public class GraphicsMoverV4 extends GraphicsMoverV3 {
         super.initComponent();
 
         // Change text in the buttons.
-        this.moveUp = new JButton("Move Left Up");
-        this.moveDown = new JButton("Move Left Down");
-        this.moveLeft = new JButton("Move Right Up");
-        this.moveRight = new JButton("Move Right Down");
+        this.moveUp.setText("Move Left Up");
+        this.moveDown.setText("Move Left Down");
+        this.moveLeft.setText("Move Right Up");
+        this.moveRight.setText("Move Right Down");
 
         // Create CanvasDrawerV2;
         this.canvasDrawerV2 = new CanvasDrawerV2();
