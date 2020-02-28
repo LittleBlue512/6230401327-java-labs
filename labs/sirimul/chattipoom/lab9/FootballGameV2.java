@@ -12,23 +12,29 @@ public class FootballGameV2 extends FootballGameV1 implements ActionListener, Ke
 
     public FootballGameV2(String _frameTitle) {
         super(_frameTitle);
+
+        // Sets the focusable state of this Component to true.
+        this.setFocusable(true);
+        this.requestFocus();
     }
 
     protected void addListeners() {
-        this.addKeyListener(this);
-
+        // Add ActionListener to all the buttons.
         this.moveUp.addActionListener(this);
         this.moveDown.addActionListener(this);
         this.moveLeft.addActionListener(this);
         this.moveRight.addActionListener(this);
+        this.resetButton.addActionListener(this);
+
+        this.addKeyListener(this);
     }
 
     @Override
-    protected void setFrameFeatures() {
-        super.setFrameFeatures();
+    protected void initComponent() {
+        super.initComponent();
 
-        // Sets the focusable state of this Component to true.
-        this.setFocusable(true);
+        // Change from CanvasDrawerV3 to CanvasDrawerV4.
+        this.canvasDrawerFBG = new CanvasDrawerV4();
     }
 
     @Override
@@ -36,22 +42,40 @@ public class FootballGameV2 extends FootballGameV1 implements ActionListener, Ke
         Object object = e.getSource();
 
         if (object == this.moveUp) {
-            // Move left keeper up.
-            this.canvasDrawerV3.keeperLeft.moveUp();
+            canvasDrawerFBG.keeperLeft.moveUp();
         } else if (object == this.moveDown) {
-            // Move left keeper down.
-            this.canvasDrawerV3.keeperLeft.moveDown();
+            canvasDrawerFBG.keeperLeft.moveDown();
         } else if (object == this.moveLeft) {
-            // Move right keeper up.
-            this.canvasDrawerV3.keeperRight.moveUp();
+            canvasDrawerFBG.keeperRight.moveUp();
         } else if (object == this.moveRight) {
-            // Move right keeper down.
-            this.canvasDrawerV3.keeperRight.moveDown();
+            canvasDrawerFBG.keeperRight.moveDown();
         }
+
+        // Give focus back to "this".
+        this.requestFocus();
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
+        int keyCode = e.getKeyCode();
+
+        // Move right keeper using "UP" and "DOWN".
+        if (keyCode == KeyEvent.VK_UP) {
+            // Move right keeper up.
+            canvasDrawerFBG.keeperRight.moveUp();
+        } else if (keyCode == KeyEvent.VK_DOWN) {
+            // Move right keeper down.
+            canvasDrawerFBG.keeperRight.moveDown();
+        }
+
+        // Move left keeper using "W" and "S".
+        if (keyCode == KeyEvent.VK_W) {
+            // Move left keeper up.
+            canvasDrawerFBG.keeperLeft.moveUp();
+        } else if (keyCode == KeyEvent.VK_S) {
+            // Move left keeper down.
+            canvasDrawerFBG.keeperLeft.moveDown();
+        }
     }
 
     @Override

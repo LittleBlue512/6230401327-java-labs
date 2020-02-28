@@ -5,7 +5,7 @@ import javax.swing.SwingUtilities;
 public class FootballGameV1 extends GraphicsMoverV4 {
     private static final long serialVersionUID = 1L;
 
-    protected CanvasDrawerV3 canvasDrawerV3;
+    protected CanvasDrawerV3 canvasDrawerFBG;
 
     public FootballGameV1(String _frameTitle) {
         super(_frameTitle);
@@ -14,9 +14,9 @@ public class FootballGameV1 extends GraphicsMoverV4 {
     @Override
     protected void initComponent() {
         super.initComponent();
-        
+
         // Create CanvasDrawerV3.
-        canvasDrawerV3 = new CanvasDrawerV3();
+        this.canvasDrawerFBG = new CanvasDrawerV3();
     }
 
     @Override
@@ -26,8 +26,8 @@ public class FootballGameV1 extends GraphicsMoverV4 {
         // Remove CanvasDrawerV2.
         this.centerPanel.remove(this.canvasDrawerV2);
 
-        // Add CanvasDrawerV3.
-        this.centerPanel.add(this.canvasDrawerV3);
+        // Add new CanvasDrawer.
+        this.centerPanel.add(this.canvasDrawerFBG);
     }
 
     public static void createAndShowGUI() {
