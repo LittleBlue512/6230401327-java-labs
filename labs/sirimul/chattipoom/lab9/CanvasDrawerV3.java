@@ -100,7 +100,7 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
         this.ball.x = CANVAS_WIDTH / 2 - Ball.BALL_DIAMETER / 2;
         this.ball.y = CANVAS_HEIGHT / 2 - Ball.BALL_DIAMETER / 2;
 
-        // Get new velocity.
+        // Get and Set new velocity.
         this.ball.setXVelocoty(randVelocity(minRand, maxRand));
         this.ball.setYVelocity(randVelocity(minRand, maxRand));
     }
