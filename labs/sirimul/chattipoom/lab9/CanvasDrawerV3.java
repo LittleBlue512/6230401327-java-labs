@@ -54,7 +54,7 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
 
         // Make sure the value is not zero.
         while (randNum == 0)
-            // Create a random int whose value is between 1 and 4 for xv and yv.
+            // Create a random int whose value is between minRand and maxRand for xv and yv.
             randNum = ThreadLocalRandom.current().nextInt(minRand, maxRand + 1);
 
         return randNum;
