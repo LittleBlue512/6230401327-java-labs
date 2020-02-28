@@ -26,7 +26,7 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
     public void run() {
         while (true) {
             if (isHitHorizontal()) {
-                // Check if the ball is hit the part that it can bounce.
+                // Check if the ball hit the part that it can bounce.
                 if (isHitBounce()) {
                     horizontalBounce();
                 } else {
