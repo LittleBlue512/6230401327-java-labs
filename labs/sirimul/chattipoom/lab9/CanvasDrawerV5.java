@@ -11,7 +11,7 @@ public class CanvasDrawerV5 extends CanvasDrawerV4 {
     public void run() {
         while (true) {
             if (isHitHorizontal()) {
-                // Check if the ball is hit the part that it can bounce.
+                // Check if the ball hit the part that it can bounce.
                 if (isHitBounce()) {
                     horizontalBounce();
                 } else {
