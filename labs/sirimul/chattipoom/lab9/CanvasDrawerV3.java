@@ -15,7 +15,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
     private static final long serialVersionUID = 1L;
 
-    protected static final int MIN_RAND = -4, MAX_RAND = 4;
+    protected static final int MIN_RAND = -2, MAX_RAND = 2;
 
     protected Thread running;
 
