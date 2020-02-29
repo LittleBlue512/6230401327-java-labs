@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
     private static final long serialVersionUID = 1L;
 
-    protected static final int minRand = -4, maxRand = 4;
+    protected static final int MIN_RAND = -4, MAX_RAND = 4;
 
     protected Thread running;
 
@@ -13,8 +13,8 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
         super();
         running = new Thread(this);
 
-        int xv = randVelocity(minRand, maxRand);
-        int yv = randVelocity(minRand, maxRand);
+        int xv = randVelocity(MIN_RAND, MAX_RAND);
+        int yv = randVelocity(MIN_RAND, MAX_RAND);
 
         this.ball.setXVelocoty(xv);
         this.ball.setYVelocity(yv);
@@ -49,13 +49,14 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
         }
     }
 
-    protected int randVelocity(int minRand, int maxRand) {
+    protected int randVelocity(int MIN_RAND, int MAX_RAND) {
         int randNum = 0;
 
         // Make sure the value is not zero.
         while (randNum == 0)
-            // Create a random int whose value is between minRand and maxRand for xv and yv.
-            randNum = ThreadLocalRandom.current().nextInt(minRand, maxRand + 1);
+            // Create a random int whose value is between MIN_RAND and MAX_RAND for xv and
+            // yv.
+            randNum = ThreadLocalRandom.current().nextInt(MIN_RAND, MAX_RAND + 1);
 
         return randNum;
     }
@@ -101,7 +102,7 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
         this.ball.y = CANVAS_HEIGHT / 2 - Ball.BALL_DIAMETER / 2;
 
         // Get and Set new velocity.
-        this.ball.setXVelocoty(randVelocity(minRand, maxRand));
-        this.ball.setYVelocity(randVelocity(minRand, maxRand));
+        this.ball.setXVelocoty(randVelocity(MIN_RAND, MAX_RAND));
+        this.ball.setYVelocity(randVelocity(MIN_RAND, MAX_RAND));
     }
 }
