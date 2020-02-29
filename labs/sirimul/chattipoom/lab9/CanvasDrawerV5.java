@@ -1,3 +1,13 @@
+/**
+ * This class is to reset the ball's position.
+ * This class extended from CanvasDrawerV4.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 29, 2020
+ */
+
 package sirimul.chattipoom.lab9;
 
 public class CanvasDrawerV5 extends CanvasDrawerV4 {

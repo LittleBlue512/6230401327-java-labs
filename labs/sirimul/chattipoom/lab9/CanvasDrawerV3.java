@@ -1,3 +1,13 @@
+/**
+ * This class is to move the ball by randomly set its velocity and check its collision.
+ * This class extended from CanvasDrawerV2.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 29, 2020
+ */
+
 package sirimul.chattipoom.lab9;
 
 import java.util.concurrent.ThreadLocalRandom;

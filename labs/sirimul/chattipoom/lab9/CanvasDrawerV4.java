@@ -1,3 +1,13 @@
+/**
+ * This class is to check the ball's collision with the keepers.
+ * This class extended from CanvasDrawerV3.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 29, 2020
+ */
+
 package sirimul.chattipoom.lab9;
 
 public class CanvasDrawerV4 extends CanvasDrawerV3 {

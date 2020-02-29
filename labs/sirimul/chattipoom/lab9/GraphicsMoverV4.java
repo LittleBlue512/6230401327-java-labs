@@ -1,3 +1,13 @@
+/**
+ * This class is to display a yellow ball in the middle of the field using canvasDrawerV2.
+ * This class extended from GraphicsMoverV3.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 29, 2020
+ */
+
 package sirimul.chattipoom.lab9;
 
 import javax.swing.SwingUtilities;

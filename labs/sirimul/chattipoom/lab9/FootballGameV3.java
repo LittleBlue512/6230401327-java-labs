@@ -1,3 +1,13 @@
+/**
+ * This class is to allow the user to reset the score and the ball's position.
+ * This class extended from FootballGameV2.
+ * 
+ * Author: Chattipoom Sirimul
+ * ID: 623040132-7
+ * Section: 1
+ * Date: February 29, 2020
+ */
+
 package sirimul.chattipoom.lab9;
 
 import java.awt.event.ActionEvent;
