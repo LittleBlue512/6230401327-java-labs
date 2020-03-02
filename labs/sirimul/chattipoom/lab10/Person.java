@@ -3,7 +3,7 @@ package sirimul.chattipoom.lab10;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Person {
+public class Person implements Comparable<Person> {
     protected String name;
     protected double weight, height;
     protected LocalDate dob;
@@ -62,12 +62,17 @@ public class Person {
         double height = this.getHeight();
 
         Period diff = Period.between(dob, LocalDate.now());
-        
+
         int ageYears = diff.getYears();
         int ageMonths = diff.getMonths();
         int ageDays = diff.getDays();
 
         return String.format("%s is %d years %d months %d days, has weight as %.1f kg., and height as %.1f cm.", name,
                 ageYears, ageMonths, ageDays, weight, height);
+    }
+
+    @Override
+    public int compareTo(Person other) {
+        return this.getName().compareToIgnoreCase(other.getName());
     }
 }

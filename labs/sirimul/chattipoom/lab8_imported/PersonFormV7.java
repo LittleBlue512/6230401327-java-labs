@@ -17,7 +17,6 @@ public class PersonFormV7 extends PersonFormV6 {
 
     public PersonFormV7(String string) {
         super(string);
-        // TODO Auto-generated constructor stub
     }
 
     public static void main(String[] args) {

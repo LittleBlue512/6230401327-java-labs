@@ -9,15 +9,10 @@ import javax.swing.*;
  * PersonFormV8
  */
 public class PersonFormV8 extends PersonFormV7 implements ItemListener {
-
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
 
     public PersonFormV8(String string) {
         super(string);
-        // TODO Auto-generated constructor stub
     }
 
     public static void main(String[] args) {
