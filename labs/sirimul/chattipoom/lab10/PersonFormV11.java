@@ -10,11 +10,15 @@
 
 package sirimul.chattipoom.lab10;
 
+import java.io.File;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JMenuItem;
 import javax.swing.BorderFactory;
 import javax.swing.JColorChooser;
@@ -29,6 +33,7 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
 
     protected JMenuItem customMI;
     protected JColorChooser colorChooser;
+    protected JFileChooser fileChooser;
     protected JDialog chooserDialog;
     protected ActionListener okListener, cancelListener;
 
@@ -57,10 +62,9 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
     protected void initComponents() {
         super.initComponents();
         customMI = new JMenuItem("Custom");
-        colorChooser = new JColorChooser(Color.BLACK);
 
         // Create color chooser.
-        colorChooser = new JColorChooser(Color.black);
+        colorChooser = new JColorChooser(nameTxtField.getForeground());
         colorChooser.getSelectionModel().addChangeListener(this);
         colorChooser.setBorder(BorderFactory.createTitledBorder("Color Chooser"));
 
@@ -82,6 +86,12 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
         // Create dialog.
         chooserDialog = JColorChooser.createDialog(this, "Color Chooser", false, colorChooser, okListener,
                 cancelListener);
+
+        // Create file chooser.
+        fileChooser = new JFileChooser();
+
+        // Set filechooser's directory.
+
     }
 
     @Override
@@ -94,6 +104,8 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
     protected void addListeners() {
         super.addListeners();
         customMI.addActionListener(this);
+        openMI.addActionListener(this);
+        saveMI.addActionListener(this);
     }
 
     @Override
@@ -103,6 +115,10 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
         if (source == customMI) {
             // Show color chooser dialog.
             chooserDialog.setVisible(true);
+        } else if (source == openMI) {
+            openFileDialog();
+        } else if (source == saveMI) {
+            saveFileDialog();
         }
     }
 
@@ -113,5 +129,38 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
 
         // Change the text fields color.
         changeColor(selectedColor);
+    }
+
+    private void openFileDialog() {
+        // Show file chooser open dialog.
+        int result = fileChooser.showOpenDialog(this);
+
+        // Check if the user press the "Open" button.
+        if (result == JFileChooser.APPROVE_OPTION) {
+            // User selected a file.
+            File file = fileChooser.getSelectedFile();
+            String fileName = file.getName();
+            JOptionPane.showMessageDialog(this, String.format("Opening file %s", fileName));
+
+        } else if (result == JFileChooser.CANCEL_OPTION) {
+            // User cancelled.
+            JOptionPane.showMessageDialog(this, "Open commnad cencelled by user.");
+        }
+    }
+
+    private void saveFileDialog() {
+        // Show file chooser save dialog.
+        int result = fileChooser.showSaveDialog(this);
+
+        // Check if the user press the "Save" button.
+        if (result == JFileChooser.APPROVE_OPTION) {
+            // User saved a file.
+            File file = fileChooser.getSelectedFile();
+            String fileName = file.getName();
+            JOptionPane.showMessageDialog(this, String.format("Saving file %s", fileName));
+        } else if (result == JFileChooser.CANCEL_OPTION) {
+            // User cancelled.
+            JOptionPane.showMessageDialog(this, "Save command cancelled by user.");
+        }
     }
 }

@@ -44,6 +44,7 @@ public class PersonFormV10 extends PersonFormV9 {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        super.actionPerformed(e);
         Object obj = e.getSource();
 
         // Color changing handler.
