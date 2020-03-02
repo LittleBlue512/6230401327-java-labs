@@ -12,7 +12,6 @@
 package sirimul.chattipoom.lab10;
 
 import java.io.File;
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,8 +62,6 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
     protected void initComponents() {
         super.initComponents();
         customMI = new JMenuItem("Custom");
-
-        // Create file chooser.
         fileChooser = new JFileChooser();
 
         // Create color chooser.
@@ -88,8 +85,7 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
         };
 
         // Create color chooser dialog.
-        chooserDialog = JColorChooser.createDialog(this, "Color Chooser", false, colorChooser, okListener,
-                cancelListener);
+        chooserDialog = JColorChooser.createDialog(this, "Color Chooser", false, colorChooser, okListener, cancelListener);
     }
 
     @Override
@@ -104,12 +100,14 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
         customMI.addActionListener(this);
         openMI.addActionListener(this);
         saveMI.addActionListener(this);
+        exitMI.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
         Object source = e.getSource();
+        
         if (source == customMI) {
             // Show color chooser dialog.
             chooserDialog.setVisible(true);
@@ -117,6 +115,8 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
             openFileDialog();
         } else if (source == saveMI) {
             saveFileDialog();
+        } else if (source == exitMI) {
+            System.exit(0);
         }
     }
 
@@ -129,7 +129,7 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
         changeColor(selectedColor);
     }
 
-    private void openFileDialog() {
+    protected void openFileDialog() {
         // Show file chooser open dialog.
         int result = fileChooser.showOpenDialog(this);
 
@@ -139,14 +139,13 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
             File file = fileChooser.getSelectedFile();
             String fileName = file.getName();
             JOptionPane.showMessageDialog(this, String.format("Opening file %s", fileName));
-
         } else if (result == JFileChooser.CANCEL_OPTION) {
             // User cancelled.
             JOptionPane.showMessageDialog(this, "Open commnad cencelled by user.");
         }
     }
 
-    private void saveFileDialog() {
+    protected void saveFileDialog() {
         // Show file chooser save dialog.
         int result = fileChooser.showSaveDialog(this);
 
