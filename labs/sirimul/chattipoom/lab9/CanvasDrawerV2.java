@@ -41,7 +41,7 @@ public class CanvasDrawerV2 extends CanvasDrawerV1 {
         Graphics2D g2D = (Graphics2D) g;
 
         // Draw the ball.
-        g2D.setColor(Color.YELLOW);
+        g2D.setColor(Color.ORANGE);
         g2D.draw(this.ball);
         g2D.fill(this.ball);
 
