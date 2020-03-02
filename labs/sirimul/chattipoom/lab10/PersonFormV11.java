@@ -63,6 +63,9 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
         super.initComponents();
         customMI = new JMenuItem("Custom");
 
+        // Create file chooser.
+        fileChooser = new JFileChooser();
+
         // Create color chooser.
         colorChooser = new JColorChooser(nameTxtField.getForeground());
         colorChooser.getSelectionModel().addChangeListener(this);
@@ -83,15 +86,9 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
             }
         };
 
-        // Create dialog.
+        // Create color chooser dialog.
         chooserDialog = JColorChooser.createDialog(this, "Color Chooser", false, colorChooser, okListener,
                 cancelListener);
-
-        // Create file chooser.
-        fileChooser = new JFileChooser();
-
-        // Set filechooser's directory.
-
     }
 
     @Override
