@@ -1,6 +1,7 @@
 /**
  * This class is to change the text fields color by choosing a color from the color chooser.
- * This class also extended from PersonFormV10.
+ * The program shows a message when user open and save file.
+ * This class is also extended from PersonFormV10.
  * 
  * Author: Chattipoom Sirimul
  * ID: 623040132-7
