@@ -145,11 +145,9 @@ public class PersonFormV12 extends PersonFormV11 {
 
     protected void showPersonList() {
         String message = "";
-
         for (Person person : personList) {
             message += person + "\n";
         }
-
         JOptionPane.showMessageDialog(this, message);
     }
 
