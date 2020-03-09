@@ -120,7 +120,7 @@ public class PersonFormV13 extends PersonFormV12 {
         }
 
         // Return true if there aren't any errors.
-        if (message == "")
+        if (message.equals(""))
             return true;
 
         JOptionPane.showMessageDialog(this, message);
