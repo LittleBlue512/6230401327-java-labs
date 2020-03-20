@@ -125,6 +125,18 @@ public class PersonFormV12 extends PersonFormV11 {
 
     protected void handleSearchMI() {
         String name = JOptionPane.showInputDialog("Please enter a person name to search:");
+
+        // Cancel button was pressed.
+        if (name == null) {
+            return;
+        }
+
+        // Name is empty.
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter the person's name.");
+            return;
+        }
+
         Person person = searchPerson(name);
         if (person != null) {
             JOptionPane.showMessageDialog(this, person + " is found.");
@@ -135,6 +147,18 @@ public class PersonFormV12 extends PersonFormV11 {
 
     protected void handleRemoveMI() {
         String name = JOptionPane.showInputDialog("Please enter a person name to remove.");
+
+        // Cancel button was pressed.
+        if (name == null) {
+            return;
+        }
+
+        // Name is empty.
+        if (name.equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter the person's name.");
+            return;
+        }
+
         Person person = searchPerson(name);
         if (person != null) {
             personList.remove(person);
