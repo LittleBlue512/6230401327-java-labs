@@ -85,7 +85,8 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
         };
 
         // Create color chooser dialog.
-        chooserDialog = JColorChooser.createDialog(this, "Color Chooser", false, colorChooser, okListener, cancelListener);
+        chooserDialog = JColorChooser.createDialog(this, "Color Chooser", false, colorChooser, okListener,
+                cancelListener);
     }
 
     @Override
@@ -107,7 +108,7 @@ public class PersonFormV11 extends PersonFormV10 implements ChangeListener {
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
         Object source = e.getSource();
-        
+
         if (source == customMI) {
             // Show color chooser dialog.
             chooserDialog.setVisible(true);
