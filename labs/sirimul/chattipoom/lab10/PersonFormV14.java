@@ -24,7 +24,7 @@ public class PersonFormV14 extends PersonFormV13 {
     private static final long serialVersionUID = 1L;
 
     protected static final String FILE_EXTENSION = "txt";
-    protected static final String FILE_EXTENSION_MSG = "Error: Cannot save file. The selected file must be a text file.";
+    protected static final String FILE_EXTENSION_ERR = "Error: Cannot save file. The selected file must be a text file.";
 
     public PersonFormV14(String string) {
         super(string);
@@ -60,7 +60,7 @@ public class PersonFormV14 extends PersonFormV13 {
             // Check the file's extension.
             String fileExtension = getFileExtension(file);
             if (!fileExtension.equals(FILE_EXTENSION) || fileExtension.equals("")) {
-                JOptionPane.showMessageDialog(this, FILE_EXTENSION_MSG);
+                JOptionPane.showMessageDialog(this, FILE_EXTENSION_ERR);
                 return;
             }
 
@@ -102,7 +102,7 @@ public class PersonFormV14 extends PersonFormV13 {
             // Check the file's extension.
             String fileExtension = getFileExtension(file);
             if (!fileExtension.equals(FILE_EXTENSION) || fileExtension.equals("")) {
-                JOptionPane.showMessageDialog(this, FILE_EXTENSION_MSG);
+                JOptionPane.showMessageDialog(this, FILE_EXTENSION_ERR);
                 return;
             }
 
