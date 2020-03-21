@@ -11,10 +11,12 @@
 package sirimul.chattipoom.lab10;
 
 import java.io.File;
-import java.util.Scanner;
-import java.io.FileWriter;
+import java.util.ArrayList;
 import java.io.IOException;
-import java.io.FileNotFoundException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 import javax.swing.JOptionPane;
 import javax.swing.JFileChooser;
@@ -23,8 +25,8 @@ import javax.swing.SwingUtilities;
 public class PersonFormV14 extends PersonFormV13 {
     private static final long serialVersionUID = 1L;
 
-    protected static final String FILE_EXTENSION = "txt";
-    protected static final String FILE_EXTENSION_ERR = "Error: Cannot save file. The selected file must be a text file.";
+    protected static final String FILE_EXTENSION = "well";
+    protected static final String FILE_EXTENSION_ERR = "Error: Cannot save file. The selected file must be a \"well\" file.";
 
     public PersonFormV14(String string) {
         super(string);
@@ -48,6 +50,7 @@ public class PersonFormV14 extends PersonFormV13 {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     protected void openFileDialog() {
         // Show file chooser open dialog.
         int result = fileChooser.showOpenDialog(this);
@@ -67,21 +70,19 @@ public class PersonFormV14 extends PersonFormV13 {
             // Show openning message.
             JOptionPane.showMessageDialog(this, String.format("Opening file %s", file.getName()));
 
+            // Read file.
             try {
-                Scanner fileReader = new Scanner(file);
-                String data = "";
+                FileInputStream fileIn = new FileInputStream(file);
+                ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+                personList = (ArrayList<Person>) objectIn.readObject();
+                objectIn.close();
+                fileIn.close();
+                System.out.println("File loaded.");
 
-                // Read file.
-                while (fileReader.hasNextLine()) {
-                    data += fileReader.nextLine() + "\n";
-                }
-                fileReader.close();
-
-                // Show data.
-                JOptionPane.showMessageDialog(this, data);
-
-            } catch (FileNotFoundException ex) {
-                System.out.println("File not found.");
+                // Display data.
+                showPersonList();
+            } catch (Exception ex) {
+                System.out.println("Error: cannot read the file.");
             }
         } else if (result == JFileChooser.CANCEL_OPTION) {
             // User cancelled.
@@ -109,19 +110,16 @@ public class PersonFormV14 extends PersonFormV13 {
             // Show saving message.
             JOptionPane.showMessageDialog(this, String.format("Saving file %s", file.getName()));
 
+            // Write file.
             try {
-                FileWriter fileWriter = new FileWriter(file);
-
-                // Write file
-                for (Person person : personList) {
-                    fileWriter.write(person.toString() + "\n");
-                }
-                fileWriter.close();
-
-                // Create file.
-                file.createNewFile();
+                FileOutputStream fileOut = new FileOutputStream(file);
+                ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+                objectOut.writeObject(personList);
+                objectOut.close();
+                fileOut.close();
+                System.out.println("File saved.");
             } catch (IOException ex) {
-                System.out.println("An error occured");
+                System.out.println("Error: cannot write the file.");
             }
         } else if (result == JFileChooser.CANCEL_OPTION) {
             // User cancelled.

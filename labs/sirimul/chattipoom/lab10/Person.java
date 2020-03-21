@@ -1,9 +1,12 @@
 package sirimul.chattipoom.lab10;
 
-import java.time.LocalDate;
 import java.time.Period;
+import java.time.LocalDate;
+import java.io.Serializable;
 
-public class Person implements Comparable<Person> {
+public class Person implements Comparable<Person>, Serializable {
+    private static final long serialVersionUID = 1L;
+
     protected String name;
     protected double weight, height;
     protected LocalDate dob;
