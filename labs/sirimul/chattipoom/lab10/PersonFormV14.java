@@ -1,6 +1,6 @@
 /**
  * This class is to implement open/save function.
- * The program saves bbject  to a ".well" file and also read bbject from a ".well" file.
+ * The program saves bbject  to a ".output" file and also read bbject from a ".output" file.
  * In this case, my object is ArrayList<Person>.
  * 
  * Author: Chattipoom Sirimul
@@ -26,8 +26,8 @@ import javax.swing.SwingUtilities;
 public class PersonFormV14 extends PersonFormV13 {
     private static final long serialVersionUID = 1L;
 
-    protected static final String FILE_EXTENSION = "well";
-    protected static final String FILE_EXTENSION_ERR = "Error: Cannot save/open file. The selected file must be a \".well\" file.";
+    protected static final String FILE_EXTENSION = "output";
+    protected static final String FILE_EXTENSION_ERR = "Error: Cannot save/open file. The selected file must be a \".output\" file.";
 
     public PersonFormV14(String string) {
         super(string);
